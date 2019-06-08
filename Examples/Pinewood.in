@@ -1,0 +1,598 @@
+
+
+TITLES
+PINEWOOD 007 STAGE      
+Replacement 2-pin portal
+All r'way beams as built
+Jmw
+
+
+PARAMETERS
+1   material types
+7   member types
+69  nodes
+118 members
+4   rigid support restraints
+0   springs
+
+
+MATERIALS
+1, 76.975E+0, 205.000E+06, 990.000E+09, Structural steel
+
+
+MEMBER TYPES
+1, 1, 30.600E-03, 9.990E+09, 642.030E-06, UKC
+2, 1, 25.200E-03, 9.990E+09, 509.040E-06, UKC
+3, 1, 15.000E-03, 9.990E+09, 276.720E-06, UKC
+4, 1, 7.640E-03, 9.990E+09, 61.250E-06, UKC
+5, 1, 5.870E-03, 9.990E+09, 45.680E-06, UKC
+6, 1, 2.900E-03, 9.990E+09, 12.500E-06, UKC
+7, 1, 27.900E-03, 9.990E+09, 575.500E-06, Equiv.305x305x219
+
+
+NODES
+1, 998.127, 100.000
+2, 1000.0, 100.000
+3, 1001.90, 100.000
+4, 1004.328, 100.000
+5, 1006.756, 100.000
+6, 1010.256, 100.000
+7, 1012.756, 100.000
+8, 1014.756, 100.000
+9, 1017.256, 100.000
+10, 1020.756, 100.000
+11, 1023.256, 100.000
+12, 1025.256, 100.000
+13, 1027.756, 100.000
+14, 1031.256, 100.000
+15, 1033.756, 100.000
+16, 1035.756, 100.000
+17, 1038.256, 100.000
+18, 1041.756, 100.000
+19, 1044.184, 100.000
+20, 1046.612, 100.000
+21, 1048.512, 100.000
+22, 1050.385, 100.000
+23, 998.0, 102.365
+24, 1000.0, 102.365
+25, 1001.90, 102.544
+26, 1004.328, 102.772
+27, 1006.756, 103.000
+28, 1010.256, 103.329
+29, 1013.756, 103.658
+30, 1017.256, 103.987
+31, 1020.756, 104.316
+32, 1024.256, 104.645
+33, 1027.756, 104.316
+34, 1031.256, 103.987
+35, 1034.756, 103.658
+36, 1038.256, 103.329
+37, 1041.756, 103.000
+38, 1044.184, 102.772
+39, 1046.612, 102.544
+40, 1048.512, 102.365
+41, 1050.385, 102.365
+42, 1012.756, 102.613
+43, 1014.756, 102.613
+44, 1023.256, 103.318
+45, 1025.256, 103.318
+46, 1033.756, 102.613
+47, 1035.756, 102.613
+48, 1000.0, 85.680
+49, 1000.0, 87.480
+50, 1000.0, 89.980
+51, 1000.0, 92.480
+52, 1000.0, 94.980
+53, 1000.0, 97.480
+54, 998.80, 87.480
+55, 998.666, 89.980
+56, 998.531, 92.480
+57, 998.397, 94.980
+58, 998.263, 97.480
+59, 1048.512, 85.680
+60, 1048.512, 87.480
+61, 1048.512, 89.980
+62, 1048.512, 92.480
+63, 1048.512, 94.980
+64, 1048.512, 97.480
+65, 1049.712, 87.480
+66, 1049.846, 89.980
+67, 1049.981, 92.480
+68, 1050.115, 94.980
+69, 1050.249, 97.480
+
+
+RIGID RESTRAINTS
+48,XY                                                                                                                                                           
+59,XY                                                                                                                                                           
+
+
+MEMBERS
+1, 1, 2, 1,--R---,Roof btm chord
+2, 2, 3, 1,Roof btm chord
+3, 3, 4, 7,Roof btm chord
+4, 4, 5, 3,Roof btm chord
+5, 5, 6, 3,Roof btm chord
+6, 6, 7, 3,Roof btm chord
+7, 7, 8, 3,Roof btm chord
+8, 8, 9, 3,Roof btm chord
+9, 9, 10, 3,Roof btm chord
+10, 10, 11, 3,Roof btm chord
+11, 11, 12, 3,Roof btm chord
+12, 12, 13, 3,Roof btm chord
+13, 13, 14, 3,Roof btm chord
+14, 14, 15, 3,Roof btm chord
+15, 15, 16, 3,Roof btm chord
+16, 16, 17, 3,Roof btm chord
+17, 17, 18, 3,Roof btm chord
+18, 18, 19, 3,Roof btm chord
+19, 19, 20, 7,Roof btm chord
+20, 20, 21, 1,Roof btm chord
+21, 21, 22, 1,-----R,Roof btm chord
+22, 3, 25, 2,Roof vert strut
+23, 4, 25, 4,Roof diag brace
+24, 4, 26, 4,Roof vert strut
+25, 5, 26, 4,Roof diag brace
+26, 5, 27, 4,Roof vert strut
+27, 6, 27, 4,Roof diag brace
+28, 6, 28, 4,Roof vert strut
+29, 6, 42, 4,Roof diag brace
+30, 42, 29, 4,Roof diag brace
+31, 7, 42, 6,Walkway framing
+32, 42, 43, 6,Walkway framing
+33, 8, 43, 6,Walkway framing
+34, 43, 29, 5,Roof diag brace
+35, 9, 43, 5,Roof diag brace
+36, 9, 30, 5,Roof vert strut
+37, 10, 30, 5,Roof diag brace
+38, 10, 31, 5,Roof vert strut
+39, 10, 44, 5,Roof diag brace
+40, 44, 32, 5,Roof diag brace
+41, 11, 44, 6,Walkway framing
+42, 44, 45, 6,Walkway framing
+43, 12, 45, 6,Walkway framing
+44, 45, 32, 5,Roof diag brace
+45, 13, 45, 5,Roof diag brace
+46, 13, 33, 5,Roof vert strut
+47, 13, 34, 5,Roof diag brace
+48, 14, 34, 5,Roof vert strut
+49, 14, 46, 5,Roof diag brace
+50, 46, 35, 5,Roof diag brace
+51, 15, 46, 6,Walkway framing
+52, 46, 47, 6,Walkway framing
+53, 16, 47, 6,Walkway framing
+54, 47, 35, 4,Roof diag brace
+55, 17, 47, 4,Roof diag brace
+56, 17, 36, 4,Roof vert strut
+57, 17, 37, 4,Roof diag brace
+58, 18, 37, 4,Roof vert strut
+59, 18, 38, 4,Roof diag brace
+60, 19, 38, 4,Roof vert strut
+61, 19, 39, 4,Roof diag brace
+62, 20, 39, 2,Roof vert strut
+63, 23, 24, 1,Leg top transom
+64, 24, 25, 1,R   R, Roof top chord
+65, 25, 26, 7,Roof top chord
+66, 26, 27, 3,Roof top chord
+67, 27, 28, 3,Roof top chord
+68, 28, 29, 3,Roof top chord
+69, 29, 30, 3,Roof top chord
+70, 30, 31, 3,Roof top chord
+71, 31, 32, 3,Roof top chord
+72, 32, 33, 3,Roof top chord
+73, 33, 34, 3,Roof top chord
+74, 34, 35, 3,Roof top chord
+75, 35, 36, 3,Roof top chord
+76, 36, 37, 3,Roof top chord
+77, 37, 38, 3,Roof top chord
+78, 38, 39, 7,Roof top chord
+79, 39, 40, 1,Roof top chord
+80, 40, 41, 1,Leg top transom
+81, 2, 24, 2,RRR-R-,Roof corner vert strut
+82, 53, 2, 2,Leg inner vert
+83, 52, 53, 2,Leg inner vert
+84, 51, 52, 2,Leg inner vert
+85, 50, 51, 2,Leg inner vert
+86, 49, 50, 2,Leg inner vert
+87, 48, 49, 2,Leg inner vert
+88, 58, 53, 2,Leg transom
+89, 57, 52, 2,Leg transom
+90, 56, 51, 2,Leg transom
+91, 55, 50, 2,Leg transom
+92, 54, 49, 2,Leg transom
+93, 1, 23, 2,Roof end vert strut
+94, 58, 1, 2,Leg outer vert
+95, 57, 58, 2,Leg outer vert
+96, 56, 57, 2,Leg outer vert
+97, 55, 56, 2,Leg outer vert
+98, 54, 55, 2,Leg outer vert
+99, 48, 54, 2,Leg diag base
+100, 21, 40, 2,Roof corner vert strut
+101, 64, 21, 2,Leg inner vert
+102, 63, 64, 2,Leg inner vert
+103, 62, 63, 2,Leg inner vert
+104, 61, 62, 2,Leg inner vert
+105, 60, 61, 2,Leg inner vert
+106, 59, 60, 2,Leg inner vert
+107, 64, 69, 2,Leg transom
+108, 63, 68, 2,Leg transom
+109, 62, 67, 2,Leg transom
+110, 61, 66, 2,Leg transom
+111, 60, 65, 2,Leg transom
+112, 22, 41, 2,Roof end vert strut
+113, 69, 22, 2,Leg outer vert
+114, 68, 69, 2,Leg outer vert
+115, 67, 68, 2,Leg outer vert
+116, 66, 67, 2,Leg outer vert
+117, 65, 66, 2,Leg outer vert
+118, 59, 65, 2,Leg diag base
+
+
+LOADS
+SINGLE VERT LOAD AT APEX
+32,G,N,0.,-1000.,0., Point load at apex
+
+SLS SW STEEL FRAME ONLY
+1,G,D,0.,-76.974998,0., Self weight
+
+SLS SW ALL STEEL
+1,G,D,0.,-76.974998,0., Self weight
+7,G,U,0.,-6.2178,0., Walkway SW
+11,G,U,0.,-6.2178,0., Walkway SW
+15,G,U,0.,-6.2178,0., Walkway SW
+3.6,G,P,0.,-3.874,0., Runway beam SW
+4.25,G,P,0.,-3.874,0., Runway beam SW
+5,G,N,0.,-3.874,0., Runway beam SW
+5.5,G,P,0.,-3.874,0., Runway beam SW
+6,G,N,0.,-3.874,0., Runway beam SW
+6.7,G,P,0.,-3.874,0., Runway beam SW
+7.45,G,P,0.,-3.874,0., Runway beam SW
+8.3,G,P,0.,-3.874,0., Runway beam SW
+9,G,N,0.,-3.874,0., Runway beam SW
+9.5,G,P,0.,-3.874,0., Runway beam SW
+10,G,N,0.,-3.874,0., Runway beam SW
+10.7,G,P,0.,-3.874,0., Runway beam SW
+11.5,G,P,0.,-3.874,0., Runway beam SW
+12.3,G,P,0.,-3.874,0., Runway beam SW
+13,G,N,0.,-3.874,0., Runway beam SW
+13.5,G,P,0.,-3.874,0., Runway beam SW
+14,G,N,0.,-3.874,0., Runway beam SW
+14.7,G,P,0.,-3.874,0., Runway beam SW
+15.55,G,P,0.,-3.874,0., Runway beam SW
+16.299999,G,P,0.,-3.874,0., Runway beam SW
+17,G,N,0.,-3.874,0., Runway beam SW
+17.5,G,P,0.,-3.874,0., Runway beam SW
+18,G,N,0.,-3.874,0., Runway beam SW
+18.75,G,P,0.,-3.874,0., Runway beam SW
+19.4,G,P,0.,-3.874,0., Runway beam SW
+
+SLS SW+DL+LL
+1,G,D,0.,-76.974998,0., Self weight
+63,G,U,0.,-3.14545,0., Clad+purl+servcs
+82,G,U,0.,-1.6824,0., Clad+sheet rails
+101,G,U,0.,-1.6824,0., Clad+sheet rails
+7,G,U,0.,-6.2178,0., Walkway SW
+11,G,U,0.,-6.2178,0., Walkway SW
+15,G,U,0.,-6.2178,0., Walkway SW
+3.6,G,P,0.,-3.874,0., Runway beam SW
+4.25,G,P,0.,-3.874,0., Runway beam SW
+5,G,N,0.,-3.874,0., Runway beam SW
+5.5,G,P,0.,-3.874,0., Runway beam SW
+6,G,N,0.,-3.874,0., Runway beam SW
+6.7,G,P,0.,-3.874,0., Runway beam SW
+7.45,G,P,0.,-3.874,0., Runway beam SW
+8.3,G,P,0.,-3.874,0., Runway beam SW
+9,G,N,0.,-3.874,0., Runway beam SW
+9.5,G,P,0.,-3.874,0., Runway beam SW
+10,G,N,0.,-3.874,0., Runway beam SW
+10.7,G,P,0.,-3.874,0., Runway beam SW
+11.5,G,P,0.,-3.874,0., Runway beam SW
+12.3,G,P,0.,-3.874,0., Runway beam SW
+13,G,N,0.,-3.874,0., Runway beam SW
+13.5,G,P,0.,-3.874,0., Runway beam SW
+14,G,N,0.,-3.874,0., Runway beam SW
+14.7,G,P,0.,-3.874,0., Runway beam SW
+15.55,G,P,0.,-3.874,0., Runway beam SW
+16.299999,G,P,0.,-3.874,0., Runway beam SW
+17,G,N,0.,-3.874,0., Runway beam SW
+17.5,G,P,0.,-3.874,0., Runway beam SW
+18,G,N,0.,-3.874,0., Runway beam SW
+18.75,G,P,0.,-3.874,0., Runway beam SW
+19.4,G,P,0.,-3.874,0., Runway beam SW
+63,G,U,0.,-4.389,0., Roof 0.6 LL
+7,G,U,0.,-18.2875,0., Walkway 2.5 LL
+11,G,U,0.,-18.2875,0., Walkway 2.5 LL
+15,G,U,0.,-18.2875,0., Walkway 2.5 LL
+3.6,G,P,0.,-27.459999,0., Runway blocks+LL
+4.25,G,P,0.,-27.459999,0., Runway blocks+LL
+5,G,N,0.,-27.459999,0., Runway blocks+LL
+5.5,G,P,0.,-27.459999,0., Runway blocks+LL
+6,G,N,0.,-27.459999,0., Runway blocks+LL
+6.7,G,P,0.,-27.459999,0., Runway blocks+LL
+7.45,G,P,0.,-27.459999,0., Runway blocks+LL
+8.3,G,P,0.,-27.459999,0., Runway blocks+LL
+9,G,N,0.,-27.459999,0., Runway blocks+LL
+9.5,G,P,0.,-27.459999,0., Runway blocks+LL
+10,G,N,0.,-27.459999,0., Runway blocks+LL
+10.7,G,P,0.,-27.459999,0., Runway blocks+LL
+11.5,G,P,0.,-27.459999,0., Runway blocks+LL
+12.3,G,P,0.,-27.459999,0., Runway blocks+LL
+13,G,N,0.,-27.459999,0., Runway blocks+LL
+13.5,G,P,0.,-27.459999,0., Runway blocks+LL
+14,G,N,0.,-27.459999,0., Runway blocks+LL
+14.7,G,P,0.,-27.459999,0., Runway blocks+LL
+15.55,G,P,0.,-27.459999,0., Runway blocks+LL
+16.299999,G,P,0.,-27.459999,0., Runway blocks+LL
+17,G,N,0.,-27.459999,0., Runway blocks+LL
+17.5,G,P,0.,-27.459999,0., Runway blocks+LL
+18,G,N,0.,-27.459999,0., Runway blocks+LL
+18.75,G,P,0.,-27.459999,0., Runway blocks+LL
+19.4,G,P,0.,-27.459999,0., Runway blocks+LL
+
+SLS SW+DL+LL+Wind
+1,G,D,0.,-76.974998,0., Self weight
+63,G,U,0.,-3.14545,0., Clad+purlns+servces
+82,G,U,0.,-1.6824,0., Clad+sheet rails
+112,G,U,0.,-1.6824,0., Clad+sheet rails
+7,G,U,0.,-6.2178,0., Walkway SW
+11,G,U,0.,-6.2178,0., Walkway SW
+15,G,U,0.,-6.2178,0., Walkway SW
+3.6,G,P,0.,-3.874,0., Runway beam SW
+4.25,G,P,0.,-3.874,0., Runway beam SW
+5,G,N,0.,-3.874,0., Runway beam SW
+5.5,G,P,0.,-3.874,0., Runway beam SW
+6,G,N,0.,-3.874,0., Runway beam SW
+6.7,G,P,0.,-3.874,0., Runway beam SW
+7.45,G,P,0.,-3.874,0., Runway beam SW
+8.3,G,P,0.,-3.874,0., Runway beam SW
+9,G,N,0.,-3.874,0., Runway beam SW
+9.5,G,P,0.,-3.874,0., Runway beam SW
+10,G,N,0.,-3.874,0., Runway beam SW
+10.7,G,P,0.,-3.874,0., Runway beam SW
+11.5,G,P,0.,-3.874,0., Runway beam SW
+12.3,G,P,0.,-3.874,0., Runway beam SW
+13,G,N,0.,-3.874,0., Runway beam SW
+13.5,G,P,0.,-3.874,0., Runway beam SW
+14,G,N,0.,-3.874,0., Runway beam SW
+14.7,G,P,0.,-3.874,0., Runway beam SW
+15.55,G,P,0.,-3.874,0., Runway beam SW
+16.299999,G,P,0.,-3.874,0., Runway beam SW
+17,G,N,0.,-3.874,0., Runway beam SW
+17.5,G,P,0.,-3.874,0., Runway beam SW
+18,G,N,0.,-3.874,0., Runway beam SW
+18.75,G,P,0.,-3.874,0., Runway beam SW
+19.4,G,P,0.,-3.874,0., Runway beam SW
+63,G,U,0.,-4.389,0., Roof 0.6 LL
+7,G,U,0.,-18.2875,0., Walkway 2.5 LL
+11,G,U,0.,-18.2875,0., Walkway 2.5 LL
+15,G,U,0.,-18.2875,0., Walkway 2.5 LL
+3.6,G,P,0.,-27.459999,0., Runway blocks+LL
+4.25,G,P,0.,-27.459999,0., Runway blocks+LL
+5,G,N,0.,-27.459999,0., Runway blocks+LL
+5.5,G,P,0.,-27.459999,0., Runway blocks+LL
+6,G,N,0.,-27.459999,0., Runway blocks+LL
+6.7,G,P,0.,-27.459999,0., Runway blocks+LL
+7.45,G,P,0.,-27.459999,0., Runway blocks+LL
+8.3,G,P,0.,-27.459999,0., Runway blocks+LL
+9,G,N,0.,-27.459999,0., Runway blocks+LL
+9.5,G,P,0.,-27.459999,0., Runway blocks+LL
+10,G,N,0.,-27.459999,0., Runway blocks+LL
+10.7,G,P,0.,-27.459999,0., Runway blocks+LL
+11.5,G,P,0.,-27.459999,0., Runway blocks+LL
+12.3,G,P,0.,-27.459999,0., Runway blocks+LL
+13,G,N,0.,-27.459999,0., Runway blocks+LL
+13.5,G,P,0.,-27.459999,0., Runway blocks+LL
+14,G,N,0.,-27.459999,0., Runway blocks+LL
+14.7,G,P,0.,-27.459999,0., Runway blocks+LL
+15.55,G,P,0.,-27.459999,0., Runway blocks+LL
+16.299999,G,P,0.,-27.459999,0., Runway blocks+LL
+17,G,N,0.,-27.459999,0., Runway blocks+LL
+17.5,G,P,0.,-27.459999,0., Runway blocks+LL
+18,G,N,0.,-27.459999,0., Runway blocks+LL
+18.75,G,P,0.,-27.459999,0., Runway blocks+LL
+19.4,G,P,0.,-27.459999,0., Runway blocks+LL
+81,G,U,17.556,0.,0., L wind on L leg
+63,L,U,0.,54.131001,0., Lwind Lroof edge
+64,L,U,0.,54.131001,0., Lwind Lroof edge
+65,L,U,0.,35.112,0., Lwind Lroof main
+72,L,U,0.,21.945,0., Lwind Rroof apex
+73,L,U,0.,26.334,0., Lwind Rroof main
+100,G,U,30.723,0.,0., Lwind on R leg
+
+ULS 1.4SW+1.4DL+1.6LL
+1,G,D,0.,-107.769997,0., Self weight
+63,G,U,0.,-4.4036,0., Clad+purl+servcs
+82,G,U,0.,-2.3554,0., Clad+sheet rails
+101,G,U,0.,-2.3554,0., Clad+sheet rails
+7,G,U,0.,-8.7049,0., Walkway SW
+11,G,U,0.,-8.7049,0., Walkway SW
+15,G,U,0.,-8.7049,0., Walkway SW
+3.6,G,P,0.,-5.4236,0., Runway beam SW
+4.25,G,P,0.,-5.4236,0., Runway beam SW
+5,G,N,0.,-5.4236,0., Runway beam SW
+5.5,G,P,0.,-5.4236,0., Runway beam SW
+6,G,N,0.,-5.4236,0., Runway beam SW
+6.7,G,P,0.,-5.4236,0., Runway beam SW
+7.45,G,P,0.,-5.4236,0., Runway beam SW
+8.3,G,P,0.,-5.4236,0., Runway beam SW
+9,G,N,0.,-5.4236,0., Runway beam SW
+9.5,G,P,0.,-5.4236,0., Runway beam SW
+10,G,N,0.,-5.4236,0., Runway beam SW
+10.7,G,P,0.,-5.4236,0., Runway beam SW
+11.5,G,P,0.,-5.4236,0., Runway beam SW
+12.3,G,P,0.,-5.4236,0., Runway beam SW
+13,G,N,0.,-5.4236,0., Runway beam SW
+13.5,G,P,0.,-5.4236,0., Runway beam SW
+14,G,N,0.,-5.4236,0., Runway beam SW
+14.7,G,P,0.,-5.4236,0., Runway beam SW
+15.55,G,P,0.,-5.4236,0., Runway beam SW
+16.299999,G,P,0.,-5.4236,0., Runway beam SW
+17,G,N,0.,-5.4236,0., Runway beam SW
+17.5,G,P,0.,-5.4236,0., Runway beam SW
+18,G,N,0.,-5.4236,0., Runway beam SW
+18.75,G,P,0.,-5.4236,0., Runway beam SW
+19.4,G,P,0.,-5.4236,0., Runway beam SW
+63,G,U,0.,-7.0224,0., Roof 0.6 LL
+7,G,U,0.,-29.26,0., Walkway 2.5 LL
+11,G,U,0.,-29.26,0., Walkway 2.5 LL
+15,G,U,0.,-29.26,0., Walkway 2.5 LL
+3.6,G,P,0.,-43.936001,0., Runway blocks+LL
+4.25,G,P,0.,-43.936001,0., Runway blocks+LL
+5,G,N,0.,-43.936001,0., Runway blocks+LL
+5.5,G,P,0.,-43.936001,0., Runway blocks+LL
+6,G,N,0.,-43.936001,0., Runway blocks+LL
+6.7,G,P,0.,-43.936001,0., Runway blocks+LL
+7.45,G,P,0.,-43.936001,0., Runway blocks+LL
+8.3,G,P,0.,-43.936001,0., Runway blocks+LL
+9,G,N,0.,-43.936001,0., Runway blocks+LL
+9.5,G,P,0.,-43.936001,0., Runway blocks+LL
+10,G,N,0.,-43.936001,0., Runway blocks+LL
+10.7,G,P,0.,-43.936001,0., Runway blocks+LL
+11.5,G,P,0.,-43.936001,0., Runway blocks+LL
+12.3,G,P,0.,-43.936001,0., Runway blocks+LL
+13,G,N,0.,-43.936001,0., Runway blocks+LL
+13.5,G,P,0.,-43.936001,0., Runway blocks+LL
+14,G,N,0.,-43.936001,0., Runway blocks+LL
+14.7,G,P,0.,-43.936001,0., Runway blocks+LL
+15.55,G,P,0.,-43.936001,0., Runway blocks+LL
+16.299999,G,P,0.,-43.936001,0., Runway blocks+LL
+17,G,N,0.,-43.936001,0., Runway blocks+LL
+17.5,G,P,0.,-43.936001,0., Runway blocks+LL
+18,G,N,0.,-43.936001,0., Runway blocks+LL
+18.75,G,P,0.,-43.936001,0., Runway blocks+LL
+19.4,G,P,0.,-43.936001,0., Runway blocks+LL
+
+ULS 1.2(SW+DL+LL+Wind)
+1,G,D,0.,-92.370003,0., Self weight
+63,G,U,0.,-3.7745,0., Clad+purlns+servces
+82,G,U,0.,-2.0189,0., Clad+sheet rails
+112,G,U,0.,-2.0189,0., Clad+sheet rails
+7,G,U,0.,-7.4614,0., Walkway SW
+11,G,U,0.,-7.4614,0., Walkway SW
+15,G,U,0.,-7.4614,0., Walkway SW
+3.6,G,P,0.,-4.6488,0., Runway beam SW
+4.25,G,P,0.,-4.6488,0., Runway beam SW
+5,G,N,0.,-4.6488,0., Runway beam SW
+5.5,G,P,0.,-4.6488,0., Runway beam SW
+6,G,N,0.,-4.6488,0., Runway beam SW
+6.7,G,P,0.,-4.6488,0., Runway beam SW
+7.45,G,P,0.,-4.6488,0., Runway beam SW
+8.3,G,P,0.,-4.6488,0., Runway beam SW
+9,G,N,0.,-4.6488,0., Runway beam SW
+9.5,G,P,0.,-4.6488,0., Runway beam SW
+10,G,N,0.,-4.6488,0., Runway beam SW
+10.7,G,P,0.,-4.6488,0., Runway beam SW
+11.5,G,P,0.,-4.6488,0., Runway beam SW
+12.3,G,P,0.,-4.6488,0., Runway beam SW
+13,G,N,0.,-4.6488,0., Runway beam SW
+13.5,G,P,0.,-4.6488,0., Runway beam SW
+14,G,N,0.,-4.6488,0., Runway beam SW
+14.7,G,P,0.,-4.6488,0., Runway beam SW
+15.55,G,P,0.,-4.6488,0., Runway beam SW
+16.299999,G,P,0.,-4.6488,0., Runway beam SW
+17,G,N,0.,-4.6488,0., Runway beam SW
+17.5,G,P,0.,-4.6488,0., Runway beam SW
+18,G,N,0.,-4.6488,0., Runway beam SW
+18.75,G,P,0.,-4.6488,0., Runway beam SW
+19.4,G,P,0.,-4.6488,0., Runway beam SW
+63,G,U,0.,-5.2668,0., Roof 0.6 LL
+7,G,U,0.,-26.334,0., Walkway 2.5 LL
+11,G,U,0.,-26.334,0., Walkway 2.5 LL
+15,G,U,0.,-26.334,0., Walkway 2.5 LL
+3.6,G,P,0.,-32.952,0., Runway blocks+LL
+4.25,G,P,0.,-32.952,0., Runway blocks+LL
+5,G,N,0.,-32.952,0., Runway blocks+LL
+5.5,G,P,0.,-32.952,0., Runway blocks+LL
+6,G,N,0.,-32.952,0., Runway blocks+LL
+6.7,G,P,0.,-32.952,0., Runway blocks+LL
+7.45,G,P,0.,-32.952,0., Runway blocks+LL
+8.3,G,P,0.,-32.952,0., Runway blocks+LL
+9,G,N,0.,-32.952,0., Runway blocks+LL
+9.5,G,P,0.,-32.952,0., Runway blocks+LL
+10,G,N,0.,-32.952,0., Runway blocks+LL
+10.7,G,P,0.,-32.952,0., Runway blocks+LL
+11.5,G,P,0.,-32.952,0., Runway blocks+LL
+12.3,G,P,0.,-32.952,0., Runway blocks+LL
+13,G,N,0.,-32.952,0., Runway blocks+LL
+13.5,G,P,0.,-32.952,0., Runway blocks+LL
+14,G,N,0.,-32.952,0., Runway blocks+LL
+14.7,G,P,0.,-32.952,0., Runway blocks+LL
+15.55,G,P,0.,-32.952,0., Runway blocks+LL
+16.299999,G,P,0.,-32.952,0., Runway blocks+LL
+17,G,N,0.,-32.952,0., Runway blocks+LL
+17.5,G,P,0.,-32.952,0., Runway blocks+LL
+18,G,N,0.,-32.952,0., Runway blocks+LL
+18.75,G,P,0.,-32.952,0., Runway blocks+LL
+19.4,G,P,0.,-32.952,0., Runway blocks+LL
+81,G,U,21.066999,0.,0., L wind on L leg
+63,L,U,0.,54.131001,0., Lwind Lroof edge
+64,L,U,0.,54.131001,0., Lwind Lroof edge
+65,L,U,0.,42.133999,0., Lwind Lroof main
+72,L,U,0.,26.334,0., Lwind Rroof apex
+73,L,U,0.,31.601,0., Lwind Rroof main
+100,G,U,36.868,0.,0., Lwind on R leg
+
+ULS SW+DL + 1.2Wind
+1,G,D,0.,-76.974998,0., Self weight
+63,G,U,0.,-3.14545,0., Clad+purlns+servces
+82,G,U,0.,-1.6824,0., Clad+sheet rails
+112,G,U,0.,-1.6824,0., Clad+sheet rails
+7,G,U,0.,-6.2178,0., Walkway SW
+11,G,U,0.,-6.2178,0., Walkway SW
+15,G,U,0.,-6.2178,0., Walkway SW
+3.6,G,P,0.,-3.874,0., Runway beam SW
+4.25,G,P,0.,-3.874,0., Runway beam SW
+5,G,N,0.,-3.874,0., Runway beam SW
+5.5,G,P,0.,-3.874,0., Runway beam SW
+6,G,N,0.,-3.874,0., Runway beam SW
+6.7,G,P,0.,-3.874,0., Runway beam SW
+7.45,G,P,0.,-3.874,0., Runway beam SW
+8.3,G,P,0.,-3.874,0., Runway beam SW
+9,G,N,0.,-3.874,0., Runway beam SW
+9.5,G,P,0.,-3.874,0., Runway beam SW
+10,G,N,0.,-3.874,0., Runway beam SW
+10.7,G,P,0.,-3.874,0., Runway beam SW
+11.5,G,P,0.,-3.874,0., Runway beam SW
+12.3,G,P,0.,-3.874,0., Runway beam SW
+13,G,N,0.,-3.874,0., Runway beam SW
+13.5,G,P,0.,-3.874,0., Runway beam SW
+14,G,N,0.,-3.874,0., Runway beam SW
+14.7,G,P,0.,-3.874,0., Runway beam SW
+15.55,G,P,0.,-3.874,0., Runway beam SW
+16.299999,G,P,0.,-3.874,0., Runway beam SW
+17,G,N,0.,-3.874,0., Runway beam SW
+17.5,G,P,0.,-3.874,0., Runway beam SW
+18,G,N,0.,-3.874,0., Runway beam SW
+18.75,G,P,0.,-3.874,0., Runway beam SW
+19.4,G,P,0.,-3.874,0., Runway beam SW
+81,G,U,21.066999,0.,0., L wind on L leg
+63,L,U,0.,54.131001,0., Lwind Lroof edge
+64,L,U,0.,54.131001,0., Lwind Lroof edge
+65,L,U,0.,42.133999,0., Lwind Lroof main
+72,L,U,0.,26.334,0., Lwind Rroof apex
+73,L,U,0.,31.601,0., Lwind Rroof main
+100,G,U,36.868,0.,0., Lwind on R leg
+
+
+
+
+LOAD COMBINATIONS
+SLS
+1,1.
+2,1.
+3,1.
+4,1.
+5,1.
+
+ULS
+2,1.4
+5,1.6
+1,1.4
+4,1.6
+3,1.6
+
+
+
+
+
+

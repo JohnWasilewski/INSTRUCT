@@ -1,0 +1,538 @@
+      SUBROUTINE WinMenus
+C     -------------------
+C     jw / 21-01-12  draft
+C     jw / 15-02-12  last mod
+
+      USE dislin
+      USE LUnits
+      USE Config
+      USE FILES
+      USE WINSTUFF
+      USE M
+      USE TITLES
+      USE PARAMS
+      USE MATERIALS
+      USE PROPERTIES
+      USE NODES
+      USE MEMBERS
+      USE Restraints
+      USE LOADING
+      USE DRW
+
+      EXTERNAL
+     +    FNew,
+     +    FOpen,
+     +    FSave,
+     +    FSaveAs,
+     +    rTitles,
+     +    rParams,
+     +    rMatls,
+     +    rProps,
+     +    rNodes,
+     +    rMembs,
+     +    rRestr,
+     +    rLoads,
+     -    rCombs,
+     +    List,
+     +    ListOUT,
+     +    DrawSCR,
+     +    SetDRAWlin,
+     +    SetDRAWthk,
+     +    Struct,
+     +    Fini,
+     +    Exit
+
+      CHARACTER Mu*12, Ma*12, I2CHAR*16
+
+      CALL ClearAllData
+      CALL RTFini
+
+      MORE = .TRUE.
+      SOLVED   = .FALSE.
+
+      DO WHILE(MORE)
+
+      IF(SOLVED) THEN
+          CALL ReadInput(LUI) !(Makes SOLVED=.FALSE.)
+      END IF
+
+      IF(ReSizing) THEN
+          GoodPAR  = .TRUE.
+          SOLVED   = .FALSE.
+          GoodLOD  = .FALSE.
+      END IF
+
+      idSCR    = 0
+      idTitPAN = 0
+      idParPAN = 0
+      idMatPAN = 0
+      idPrpPAN = 0
+      idNodPAN = 0
+      idMemPAN = 0
+      idResPAN = 0
+      idSprPAN = 0
+      idDRW    = 0
+      idLodPAN = 0
+
+      ShowsSCR = .FALSE.
+      ShowsTIT = .FALSE.
+      ShowsPAR = .FALSE.
+      ShowsMAT = .FALSE.
+      ShowsPRP = .FALSE.
+      ShowsNOD = .FALSE.
+      ShowsMEM = .FALSE.
+      ShowsRES = .FALSE.
+      ShowsDRW = .FALSE.
+      ShowsLOD = .FALSE.
+
+C     Suppress the Exit menut
+      CALL SWGPOP('NOOK')
+      CALL SWGPOP('NOQUIT')
+C     CALL SWGPOP('NOHELP')
+      CALL SWGOPT('OK','CLOSE')
+
+
+C     Program window
+      CALL SWGPOS(Win1L,Win1T)
+      CALL SWGSIZ(Win1W,Win1H)
+C     CALL SWGFNT(PrpN%Styl,PrpN%Size)
+      CALL SWGFNT(PrpN%Styl,PrpN%Size)
+      CALL WGINI('FORM',Win1) !<initialise>
+
+
+C     ---------
+C     FILE MENU
+C     ---------
+
+      CALL WGPOP(Win1,'File', MenuF)
+C         CALL WGAPP(MenuF,'New..',MenuF_New)
+C         CALL SWGCBK(MenuF_New, FNew)
+
+          CALL WGAPP(MenuF,'Open', MenuF_Open)
+          CALL SWGCBK(MenuF_Open, FOpen)
+
+          CALL WGAPP(MenuF,'Save structure', MenuF_Save)
+          CALL SWGCBK(MenuF_Save, FSave)
+
+          CALL WGAPP(MenuF,'Save-AS', MenuF_SaveAs)
+          CALL SWGCBK(MenuF_SaveAs, FSaveAs)
+
+          CALL WGAPP(MenuF,'Exit', MenuF_Exit)
+          CALL SWGCBK(MenuF_Exit, Fini)
+
+
+C     --------------
+C     STRUCTURE MENU
+C     --------------
+
+      CALL WGPOP(Win1,'Structure',MenuS)
+          CALL WGAPP(MenuS,'New structure',MenuS_New)
+          CALL SWGCBK(MenuS_New, FNew)
+
+          CALL WGAPP(MenuS,'Titles',MenuS_Titles)
+          CALL SWGCBK(MenuS_Titles, rTitles)
+
+          CALL WGAPP(MenuS,'Size',MenuS_Params)
+          CALL SWGCBK(MenuS_Params, rParams)
+
+          CALL WGAPP(MenuS,'Materials',MenuS_Matls)
+          CALL SWGCBK(MenuS_Matls, rMatls)
+
+          CALL WGAPP(MenuS,'Member types',MenuS_Props)
+          CALL SWGCBK(MenuS_Props, rProps)
+
+          CALL WGAPP(MenuS,'Nodes',MenuS_Nodes)
+          CALL SWGCBK(MenuS_Nodes, rNodes)
+
+          CALL WGAPP(MenuS,'Member connections',MenuS_Membs)
+          CALL SWGCBK(MenuS_Membs, rMembs)
+
+          CALL WGAPP(MenuS,'Supports',MenuS_Restr)
+          CALL SWGCBK(MenuS_Restr, rRestr)
+
+          CALL WGAPP(MenuS,'Save structure', MenuS_Save)
+          CALL SWGCBK(MenuS_Save, FSave)
+
+          CALL WGAPP(MenuS,'Save-AS', MenuS_SaveAs)
+          CALL SWGCBK(MenuS_SaveAs, FSaveAs)
+
+
+C        Diagram in pane 3
+C        -----------------
+          CALL SWGPOS(Pan3L,Pan3T)
+          CALL SWGSIZ(Pan3W,Pan3H)
+
+          CALL WGDRAW(Win1,idDRW)
+          CALL scrmod('REVERSE')
+
+          CALL SWGATT(idDRW,'INACTIVE','STATUS')
+
+C     --------------
+C     LOADS MENU
+C     --------------
+
+      CALL WGPOP(Win1,'Loading',MenuL)
+          CALL WGAPP(MenuL,'Load cases',MenuL_Loads)
+          CALL SWGCBK(MenuL_Loads, rLoads)
+
+          CALL WGAPP(MenuL,'Load combinations',MenuL_Combs)
+          CALL SWGCBK(MenuL_Combs, rCombs)
+
+
+
+C     -------------
+C     ANALYSIS MENU
+C     -------------
+
+      CALL WGPOP(Win1,'Analysis',MenuA)
+
+          CALL WGPOP(MenuA,'Show diagram as . . .',MenuA_DRW)
+
+              CALL WGAPP(MenuA_DRW,'thin skeletal lines',MenuA_DRWlines)
+              CALL SWGCBK(MenuA_DRWlines, SetDrawLin)
+
+              CALL WGAPP
+     +        (MenuA_DRW,'estimated member thicknesses',MenuA_DRWmemthk)
+              CALL SWGCBK(MenuA_DRWmemthk, SetDrawThk)
+
+          CALL WGAPP
+     +   (MenuA,'Write input data only to the output file',MenuA_List)
+          CALL SWGCBK(MenuA_List, ListOUT)
+
+          CALL WGAPP(MenuA,'SOLVE then write input data + results '//
+     +                     'to the output file',MenuA_Solve)
+          CALL SWGCBK(MenuA_Solve, Struct)
+
+
+C     --------------
+C     HELP MENU
+C     --------------
+
+C     CALL WGPOP(Win1,'HELP',MenuH)
+C         CALL WGAPP(MenuH,'Help',MenuH_H)
+C         CALL SWGCBK(MenuH_H, HelpHelp)
+C
+C         CALL WGAPP(MenuH,'What''s new',MenuH_WN)
+C         CALL SWGCBK(MenuH_WN, HelpWhatsNew)
+C
+C         CALL WGAPP(MenuH,'About',MenuH_A)
+C         CALL SWGCBK(MenuH_A, HelpAbout)
+
+
+
+C     ----------------------------------------
+C     MENU GHOSTING and the HELP MENU
+C     (depending on what data already entered)
+C     ----------------------------------------
+
+      IF(.NOT.F%Named) THEN
+C         Prevent data entry until a structure filename has been chosen
+C         and the input and output files have been opened.
+          CALL SWGATT(MenuS_New,      'ACTIVE',   'STATUS')
+C         CALL SWGATT(MenuF_New,      'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuF_Save,     'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuF_SaveAS,   'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuS_Titles,   'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuS_Params,   'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuS_Matls,    'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuS_Props,    'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuS_Nodes,    'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuS_Membs,    'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuS_Restr,    'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuS_Save,     'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuS_SaveAS,   'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuL_Loads,    'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuL_Combs,    'INACTIVE', 'STATUS')
+C         CALL SWGATT(MenuA_List,     'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuA_DRWmemthk,'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuA_DRWlines, 'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuA_Solve,    'INACTIVE', 'STATUS')
+
+          CALL SWGHLP('Use the FILE menu to OPEN any existing '//
+     +          'structure data input file.|'//
+     +          'As well as opening your INPUT file, this will try '//
+     +          'to create an OUTPUT file with the same filename but '//
+     +          'with ''.RTF'' filename extension.  If an .RTF file '//
+     +          'of that name already exists, you will be prompted '//
+     +          'to rename or overwrite it.||'//
+
+     +          'Alternatively, from the STRUCTURE menu, '//
+     +          'select < New structure >, '//
+     +          'then choose a file name for the structure.||'//
+     +          'This will try to create TWO new files, with the '//
+     +          'same filename but different '//
+     +          '3-letter filename extensions (the ''file types'').  '//
+     +          'One will be a re-usable '//
+     +          'data INPUT file, with default file-type, ''.INS'', '//
+     +          'for saving all input data.  '//
+     +          'The other will be your OUTPUT file, with fixed '//
+     +          '''.RTF'' file type, ready '//
+     +          'to receive all analysis results.||'//
+
+     +          'Once SAVEd, the input file can be edited either '//
+     +          'within the program, or separately, using the system '//
+     +          'text editor or any text-reading wordprocessor. The '//
+     +          'default input file type (when entering just a '//
+     +          'filename without an extension) will be ''.INS''.  '//
+     +          'You can over-ride this by appending to the filename '//
+     +          'any extension of 1, 2 or 3 letters or numerals '//
+     +          '(eg ''.TXT''), as your own file type.||'//
+
+     +          'Your .RTF output results file, with text and '//
+     +          'diagrams, will be formatted as a wordprocessor '//
+     +          'document, which you can open with (eg) M$Word.||'//
+
+     +          'If stuck, please contact John@Wasilewski.co.uk|'//
+     +          'or call +44(0)20 7611 0514 or +44(0)7900 891 107')
+
+      ELSE IF(.NOT.GoodPAR) THEN
+C     Parameters not yet entered
+          CALL SWGATT(MenuS_Params,   'ACTIVE',   'STATUS')
+          CALL SWGATT(MenuS_Matls,    'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuS_Props,    'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuS_Nodes,    'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuS_Membs,    'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuS_Restr,    'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuL_Loads,    'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuL_Combs,    'INACTIVE', 'STATUS')
+C         CALL SWGATT(MenuA_List,     'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuA_DRWmemthk,'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuA_DRWlines, 'INACTIVE', 'STATUS')
+          CALL SWGATT(MenuA_Solve,    'INACTIVE', 'STATUS')
+
+          CALL SWGHLP('Use the STRUCTURE menu and select one of:|'//
+     +                '  > Titles|'//
+     +                '  > Size||'//
+     +     'Select ''Titles'' at any time.|'//
+     +     'You can then enter up to three lines of titles.||'//
+     +     'Select ''Size'' before entering any numeric data.|'//
+     +     'This is so that you can fix the numbers of materials, |'//
+     +     'member types, nodes, members, supports and springs.||'//
+     +     'It is necessary to do this first, so that the program|'//
+     +     'can allocate the array storage it needs in memory, |'//
+     +     'before it can receive and store all data entry for the |'//
+     +     'size of each particular structure to be analysed.||'//
+     +     'Remember to save your input data using SAVE or SAVE-as.||'//
+     +     'If stuck, please contact John@Wasilewski.co.uk|'//
+     +        'or call +44(0)20 7611 0514 or +44(0)7900 891 107')
+      ELSE
+C         GoodPAR
+C         Parameters have been entered and therefore the dynamic arrays
+C         have been allocated, so start to activate menus for the data
+C         needing dynamic array storage.
+C
+C         Materials and Nodes data require only that the arrays have
+C         been allocated and do not need any other data to precede them,
+C         so show the materials and nodes menus.
+C
+C         Start by showing the user all data entered so far
+C
+          CALL List(0)
+
+          CALL DrawSCR
+          Mu = I2CHAR(MALLOC1,Nu)
+          Ma = I2CHAR(MBYTES,Na)
+C         CALL SWGTXT(idSCR,
+C    +       'Structure storage allocated : '//Mu(1:Nu)//' bytes.')
+
+C         CALL SWGATT(MenuF_New,    'ACTIVE',   'STATUS')
+          CALL SWGATT(MenuF_Save,   'ACTIVE',   'STATUS')
+          CALL SWGATT(MenuF_SaveAS, 'ACTIVE',   'STATUS')
+          CALL SWGATT(MenuS_Params, 'ACTIVE',   'STATUS')
+          CALL SWGATT(MenuS_Matls,  'ACTIVE',   'STATUS')
+          CALL SWGATT(MenuS_Nodes,  'ACTIVE',   'STATUS')
+          CALL SWGATT(MenuS_Restr,  'ACTIVE',   'STATUS')
+C         CALL SWGATT(MenuA_List,   'ACTIVE',   'STATUS')
+
+          IF(.NOT.GoodMAT) THEN
+C         GoodPAR only:
+C             Parameters have been entered but Materials have not, so
+C             member prps and therefore members must remain ghosted
+              CALL SWGATT(MenuS_Props, 'INACTIVE', 'STATUS')
+              CALL SWGATT(MenuS_Membs, 'INACTIVE', 'STATUS')
+              CALL SWGATT(MenuL_Loads, 'INACTIVE', 'STATUS')
+              CALL SWGATT(MenuL_Combs, 'INACTIVE', 'STATUS')
+              CALL SWGATT(MenuA_Solve, 'INACTIVE', 'STATUS')
+              CALL SWGHLP('Use the STRUCTURE menu and select|'//
+     +                    'a data entry table for one of:|'//
+     +                    '  > Material properties|'//
+     +                    '  > Node coordinates|'//
+     +                    '  > Supports.||'//
+     +              'If stuck, please contact John@Wasilewski.co.uk|'//
+     +              'or call +44(0)20 7611 0514 or +44(0)1865 454 170')
+          ELSE
+C             GoodPAR + GoodMAT   +   ?GoodPrp?
+C             Parameters and materials have been entered so show also
+C             the member props menu but leave the members menu
+C             ghosted until after checking that member properties
+C             have been entered
+              CALL SWGATT(MenuS_Props, 'ACTIVE',   'STATUS')
+
+              IF(.NOT.GoodPrp) THEN
+C             GoodPAR, GoodMAT only:
+C                 Member properties not yet entered an/or correct, so
+C                 the members menu must remain ghosted
+                  CALL SWGATT(MenuS_Membs, 'INACTIVE', 'STATUS')
+                  CALL SWGATT(MenuA_Solve, 'INACTIVE', 'STATUS')
+                  CALL SWGHLP('Use the STRUCTURE menu and select|'//
+     +                     'a data entry table for one of:|'//
+     +                     '   > Material properties|'//
+     +                     '   > Member types/properties|'//
+     +                     '   > Node coordinates|'//
+     +                     '   > Supports')
+              ELSE
+C             GoodPAR + GoodMAT + GoodPrp:
+C                 With member types entered, now allow member entry also
+                  IF(.NOT. (GoodNOD.AND.GoodMEM)) THEN
+                      CALL SWGATT(MenuS_Membs, 'ACTIVE',   'STATUS')
+                      CALL SWGATT(MenuL_Loads, 'INACTIVE', 'STATUS')
+                      CALL SWGATT(MenuL_Combs, 'ACTIVE',   'STATUS')
+                      CALL SWGATT(MenuA_Solve, 'INACTIVE', 'STATUS')
+                      CALL SWGHLP('Use the STRUCTURE menu and select|'//
+     +                     'a data entry table for one of:|'//
+     +                     '   > Material properties|'//
+     +                     '   > Member properties|'//
+     +                     '   > Node coordinates|'//
+     +                     '   > Member positions|'//
+     +                     '   > Supports||'//
+     +                     'You can list your input data to an|'//
+     +                     'M$Word-readable ''.rtf'' OUTPUT file|'//
+     +                     'from the OUTPUT menu.')
+                  ELSE
+C                 GoodPAR + GoodMAT + GoodPRP + GoodNOD + GoodMEM:
+C                     With the whole structure entered, allow load entry
+                      CALL SWGATT(MenuS_Membs,    'ACTIVE',  'STATUS')
+                      CALL SWGATT(MenuL_Loads,    'ACTIVE',  'STATUS')
+                      CALL SWGATT(MenuL_Combs,    'ACTIVE',  'STATUS')
+                      CALL SWGATT(MenuA_DRWmemthk,'ACTIVE',  'STATUS')
+                      CALL SWGATT(MenuA_DRWlines, 'ACTIVE',  'STATUS')
+                      CALL SWGHLP('Program '//TRIM(Prog8)//
+     +                 ' ver.'//Vers4//'|'//
+     +                 REPEAT('-',Len_Trim(Prog8)+
+     +                 Len_Trim(Vers4)+15)//'|'//
+     +                 'Use the STRUCTURE menu and select a data|'//
+     +                 'table for entering or editing any of :|'//
+     +                 '   > Material properties|'//
+     +                 '   > Member properties|'//
+     +                 '   > Node coordinates|'//
+     +                 '   > Member positions|'//
+     +                 '   > Supports|'//
+     +                 '   > Loads||'//
+     +                 'Numbers that can be entered, of members, '//
+     +                 'nodes, member and material types, and rigid '//
+     +                 'or sprung supports, will be limited by '//
+     +                 'the structure SIZE settings entered from '//
+     +                 'the Structure menu.  To exceed these limits, '//
+     +                 'the structure SIZE must first be increased.||'//
+     +                 'The OUTPUT menu has options either to '//
+     +                 'display the structure as a skeletal line '//
+     +                 'diagram or for line thicknesses to be '//
+     +                 'scaled to section depths guessed from '//
+     +                 'the AreaX and InertiaZ values you have '//
+     +                 'entered.||'//
+     +                 'You can list just your input data to an '//
+     +                 'M$Word-readable ''.rtf'' OUTPUT file from '//
+     +                 'the OUTPUT menu.||'//
+     +                 'When the structure is fully ready, you '//
+     +                 'will be able to use the OUTPUT menu to '//
+     +                 'analyse it. This will automatically save '//
+     +                 'all results to your M$Word-readable '//
+     +                 '''.rtf'' OUTPUT file, and you will then '//
+     +                 'be able to review the results on screen '//
+     +                 'before deciding whether to keep the '//
+     +                 '''.rtf'' OUTPUT file or to overwrite it '//
+     +                 'by editing the data and re-running the '//
+     +                 'analysis.')
+                      IF(GoodLOD) THEN
+                            CALL SWGATT(MenuA_Solve, 'ACTIVE', 'STATUS')
+                            CALL SWGHLP('Program '//TRIM(Prog8)//
+     +                      ' ver.'//Vers4//'|'//
+     +                      REPEAT('-',Len_Trim(Prog8)+
+     +                      Len_Trim(Vers4)+19)//'|'//
+     +        'Select any data entry table from the STRUCTURE|'//
+     +        'menu to edit your input data, or you can now use|'//
+     +        'the OUTPUT menu to analyse the structure.||'//
+     +        'When you run the analysis, this automatically writes|'//
+     +        'all input data plus all results to an M$Word-readable|'//
+     +        '''.rtf'' output file with the same name as your data|'//
+     +        'input file (overwriting that file if it already|'//
+     +        'exists).  After running the analysis, you will be|'//
+     +        'able to examine the results on-screen before deciding|'//
+     +        'whether to keep the ''.rtf'' output file or to over-|'//
+     +        'write it by editing some of the data and re-running|'//
+     +        'the analysis.||'//
+     +        'The OUTPUT menu also lets you write just your input|'//
+     +        'data to the ''.rtf'' file without running the|'//
+     +        'analysis, and to switch between displaying the|'//
+     +        'structure with skeletal lines only or with lines|'//
+     +        'scaled to section depths guessed from AreaX and|'//
+     +        'InertiaZ values.||'//
+     +        'Please note that the program contains error traps|'//
+     +        'and two types of equilibrium checks, and it has been|'//
+     +        'carefully tested, but the ultimate responsibility|'//
+     +        'for verifying the reasonableness and correctness|'//
+     +        'of the results is:||'//
+     +        '.  .  . ALL YOURS!|||'//
+     +        'JMW, |'//PDat9//'.')
+                      END IF
+                  END IF
+              END IF
+          END IF
+      END IF !.NOT.GoodPAR
+
+      IF(.NOT.SOLVED) THEN
+          IF(.NOT. GoodPAR) CALL SPLASH
+      END IF !(.NOT.SOLVED)
+
+      CALL WGFIN !<activate>
+
+C     IF (MORE) GO TO 100  !Go around
+C     GO TO 100  !Go around
+      END DO !WHILE(MORE)  <- Go around
+
+C     CALL CloseALL
+
+      END
+
+
+
+      SubRoutine FINI
+      CALL SENDOK
+      CALL WGFIN
+      RETURN
+      END
+
+
+
+      SUBROUTINE GhostMenus
+C     --------------------
+C     jw / 03-04-12    draft
+C     jw / 03-04-12  last mod
+
+C     Ghost menus
+C     -----------
+      USE dislin
+      USE WINSTUFF
+      USE TITLES
+      USE PARAMS
+      USE MATERIALS
+      USE PROPERTIES
+      USE NODES
+      USE MEMBERS
+      USE Restraints
+      USE LOADING
+
+      CALL SWGATT(MenuS_Params,   'INACTIVE','STATUS')
+      CALL SWGATT(MenuS_Matls,    'INACTIVE','STATUS')
+      CALL SWGATT(MenuS_Nodes,    'INACTIVE','STATUS')
+      CALL SWGATT(MenuS_Props,    'INACTIVE','STATUS')
+      CALL SWGATT(MenuS_Membs,    'INACTIVE','STATUS')
+      CALL SWGATT(MenuS_Restr,    'INACTIVE','STATUS')
+      CALL SWGATT(MenuL_Loads,    'INACTIVE','STATUS')
+      CALL SWGATT(MenuL_Combs,    'INACTIVE','STATUS')
+      CALL SWGATT(MenuA_DRWmemthk,'INACTIVE','STATUS')
+      CALL SWGATT(MenuA_DRWlines, 'INACTIVE','STATUS')
+      CALL SWGATT(MenuA_Solve,    'INACTIVE','STATUS')
+
+      RETURN
+      END

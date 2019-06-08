@@ -1,0 +1,7 @@
+      SUBROUTINE ReadCOMBS(LU,NextLine)
+C     ---------------------------------
+C     jw / 30-05-12  draft
+C     jw / 30-05-12  last revised
+
+C     This subroutine action is as set out below, reading from LU.
+C     LU might be a user-defined data fi

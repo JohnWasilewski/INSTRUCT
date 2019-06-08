@@ -1,0 +1,703 @@
+{\rtf1 {\*\generator Program INSTRUCT vers.1.26: 22 Jul 17 Copyright (c) 2017 Jmw John Wasilewski}\ansi \deff0
+{\fonttbl{\f0 Courier New;}{\f1 Lucida Console;}{\f2 Arial Narrow;}}
+{\colortbl;{\red0\green0\blue0;}{\red255\green0\blue0;}{\red0\green255\blue0;}{\red0\green0\blue255;}{\red255\green255\blue0;}{\red255\green0\blue255;}{\red0\green255\blue255;}{\red255\green255\blue255;}{\red133\green0\blue0;}{\red0\green133\blue0;}{\red0\green0\blue133;}{\red255\green0\blue255}}
+\paperw11907\paperh16839\margl1077\margr850\margt907\margb907
+\f0 \fs20 \i0 \ul0 \b0 \ql \strike0 \striked0 \pard 
+-----------------------------------------------------------------------------------\line 
+INSTRUCT ver.1.26                 \f1 \b Few-nodes model\b0 \f0                   Page :      .001\line 
+Plane frame analysis              \f1 \b Roof frame\b0 \f0                        Date : 08/Jun/19\line 
+(c) 2017 Jmw                      \f1 \b Few-nodes model\b0 \f0                   Engr :       Jmw\line 
+-----------------------------------------------------------------------------------\line 
+{\shpbxignore\shpbyignore\shpwr1
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 1}}{\sp{\sn fLine}{\sv FALSE}}\shpleft0\shpright11907\shptop1134\shpbottom5669}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 3810}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft283\shptop3572\shpright2494\shpbottom3572}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf11 \fs10 \qc 1\shpleft1283\shptop3522\shpright1689\shpbottom3772}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 3810}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft2494\shptop3572\shpright4876\shpbottom3572}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf11 \fs10 \qc 2\shpleft3579\shptop3522\shpright3985\shpbottom3772}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 3810}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft4876\shptop3572\shpright7257\shpbottom3572}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf11 \fs10 \qc 3\shpleft5961\shptop3522\shpright6367\shpbottom3772}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 3810}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft7257\shptop3572\shpright9468\shpbottom3572}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf11 \fs10 \qc 4\shpleft8257\shptop3522\shpright8663\shpbottom3772}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 3810}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft283\shptop3572\shpright2324\shpbottom2721}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf11 \fs10 \qc 5\shpleft1198\shptop3097\shpright1604\shpbottom3347}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 3810}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft2324\shptop2721\shpright4365\shpbottom1871}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf11 \fs10 \qc 6\shpleft3239\shptop2246\shpright3645\shpbottom2496}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 3810}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft4365\shptop1871\shpright4876\shpbottom1871}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf11 \fs10 \qc 7\shpleft4515\shptop1821\shpright4921\shpbottom2071}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 3810}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft4876\shptop1871\shpright5386\shpbottom1871}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf11 \fs10 \qc 8\shpleft5025\shptop1821\shpright5431\shpbottom2071}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 3810}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft5386\shptop1871\shpright7427\shpbottom2721}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf11 \fs10 \qc 9\shpleft6301\shptop2246\shpright6707\shpbottom2496}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 3810}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft7427\shptop2721\shpright9468\shpbottom3572}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf11 \fs10 \qc 10\shpleft8342\shptop3097\shpright8748\shpbottom3347}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 3810}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft2494\shptop3572\shpright3430\shpbottom2721}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf11 \fs10 \qc 11\shpleft2856\shptop3097\shpright3262\shpbottom3347}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 3810}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft3430\shptop2721\shpright4365\shpbottom1871}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf11 \fs10 \qc 12\shpleft3792\shptop2246\shpright4198\shpbottom2496}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 3810}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft6322\shptop2721\shpright5386\shpbottom1871}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf11 \fs10 \qc 13\shpleft5748\shptop2246\shpright6154\shpbottom2496}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 3810}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft7257\shptop3572\shpright6322\shpbottom2721}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf11 \fs10 \qc 14\shpleft6684\shptop3097\shpright7090\shpbottom3347}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 3810}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft2494\shptop3572\shpright2324\shpbottom2721}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf11 \fs10 \qc 15\shpleft2303\shptop3097\shpright2709\shpbottom3347}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 3810}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft7257\shptop3572\shpright7427\shpbottom2721}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf11 \fs10 \qc 16\shpleft7236\shptop3097\shpright7642\shpbottom3347}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 3810}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft283\shptop5103\shpright283\shpbottom3572}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf11 \fs10 \qc 17\shpleft177\shptop4288\shpright583\shpbottom4538}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 3810}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft9468\shptop5188\shpright9468\shpbottom3572}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf11 \fs10 \qc 18\shpleft9362\shptop4330\shpright9768\shpbottom4580}}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf2 \fs14 \qc 1\shpleft9\shptop3500\shpright715\shpbottom3860}}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf2 \fs11 \qc 2\shpleft2099\shptop2662\shpright2678\shpbottom2957}}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf2 \fs10 \qc 3\shpleft4175\shptop1821\shpright4665\shpbottom2071}}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf2 \fs10 \qc 4\shpleft4686\shptop1821\shpright5176\shpbottom2071}}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf2 \fs10 \qc 5\shpleft5196\shptop1821\shpright5686\shpbottom2071}}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf2 \fs11 \qc 6\shpleft7202\shptop2662\shpright7781\shpbottom2957}}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf2 \fs14 \qc 7\shpleft9188\shptop3498\shpright9909\shpbottom3866}}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf2 \fs11 \qc 8\shpleft2277\shptop3515\shpright2836\shpbottom3800}}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf2 \fs18 \qc 9\shpleft4528\shptop3480\shpright5425\shpbottom3938}}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf2 \fs11 \qc 10\shpleft7040\shptop3515\shpright7599\shpbottom3800}}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf2 \fs10 \qc 11\shpleft3240\shptop2671\shpright3730\shpbottom2921}}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf2 \fs10 \qc 12\shpleft6132\shptop2671\shpright6622\shpbottom2921}}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf2 \fs11 \qc 13\shpleft58\shptop5044\shpright637\shpbottom5339}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 72000}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft63\shptop5103\shpright476\shpbottom5103}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 118800}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft63\shptop5103\shpright476\shpbottom5103}}
+{{\shp{\*\shpinst {\sp{\sn ShapeType}{\sv 202}}{\sp{\sn fFitShapeToText}{\sv 1}}{\sp{\sn anchorText}{\sv 4}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn dxTextLeft}{\sv 4}}{\sp{\sn dyTextTop}{\sv 4}}}{\sp{\sn dxTextRight}{\sv 4}{\sp{\sn dyTextBottom}{\sv 4}}\shpfblwtxt1 \shptxt \f2 \b \cf2 \fs12 \qc 14\shpleft9232\shptop5126\shpright9840\shpbottom5436}}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 72000}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft9248\shptop5188\shpright9661\shpbottom5188}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 20}}{\sp{\sn lineWidth}{\sv 118800}}{\sp{\sn lineColor}{\sv 8421504}}\shpleft9248\shptop5188\shpright9661\shpbottom5188}}
+{\shpwr1\shp{\*\shpinst{\sp{\sn shapeType}{\sv 3}}{\sp{\sn lineWidth}{\sv 36000}}\shpleft9410\shptop5127\shpright9526\shpbottom5243}}
+\par }
+\par \f1 \b     MATERIALS                          Density   E-modulus   G-modulus\b0 \f0 \par 
+       1: Structural steel              76.975   0.205E+09   0.990E+12\par 
+\par \par \par \f1 \b     MEMBER TYPES                   Matl       Ax         Ay          Iz\b0 \f0 \par 
+       1: UKC                        1       0.031   0.999E+10   0.642E-03\par 
+       2: UKC                        1       0.025   0.999E+10   0.509E-03\par 
+       3: UKC                        1       0.015   0.999E+10   0.277E-03\par 
+       4: UKC                        1       0.008   0.999E+10   0.613E-04\par 
+\par \par \par \f1 \b     NODES          X          Y\fs15        Rigid-supports   Spring-X       Spring-Y      Spring-Z\fs20 \b0 \f0 \par 
+       1:      100.000     13.500               ---------  ---------  ---------\par 
+       2:      106.000     16.000               ---------  ---------  ---------\par 
+       3:      112.000     18.500               ---------  ---------  ---------\par 
+       4:      113.500     18.500               ---------  ---------  ---------\par 
+       5:      115.000     18.500               ---------  ---------  ---------\par 
+       6:      121.000     16.000               ---------  ---------  ---------\par 
+       7:      127.000     13.500               ---------  ---------  ---------\par 
+       8:      106.500     13.500               ---------  ---------  ---------\par 
+       9:      113.500     13.500               ---------  ---------  ---------\par 
+      10:      120.500     13.500               ---------  ---------  ---------\par 
+      11:      109.250     16.000               ---------  ---------  ---------\par 
+      12:      117.750     16.000               ---------  ---------  ---------\par 
+      13:      100.000      9.000       XYZ     ---------  ---------  ---------\par 
+      14:      127.000      8.750       XY      ---------  ---------  ---------\par 
+\page
+-----------------------------------------------------------------------------------\line 
+INSTRUCT ver.1.26                 \f1 \b Few-nodes model\b0 \f0                   Page :      .002\line 
+-----------------------------------------------------------------------------------\line 
+\par \par \par \f1 \b     MEMBERS                         Node1 [rel]    TYPE    [rel] Node2\b0 \f0 \par 
+       1: Tie                          1             1            8\par 
+       2: Tie                          8             2            9\par 
+       3: Tie                          9             2            10\par 
+       4: Tie                         10             2            7\par 
+       5: Rafter                       1             1            2\par 
+       6: Rafter                       2             1            3\par 
+       7: Rafter                       3             1            4\par 
+       8: Rafter                       4             1            5\par 
+       9: Rafter                       5             1            6\par 
+      10: Rafter                       6             1            7\par 
+      11: Brace                        8             3            11\par 
+      12: Brace                       11             3            3\par 
+      13: Brace                       12             3            5\par 
+      14: Brace                       10             3            12\par 
+      15: Brace                        8             3            2\par 
+      16: Brace                       10             3            6\par 
+      17: Stanchion                   13             4            1\par 
+      18: Stanchion                   14             4            7\par 
+\page
+-----------------------------------------------------------------------------------\line 
+INSTRUCT ver.1.26                 \f1 \b Few-nodes model\b0 \f0                   Page :      .003\line 
+-----------------------------------------------------------------------------------\line 
+\par \par \par \f1 \b  LOAD CASE 1: SINGLE VERT LOAD AT APEX\par \b0 \f0  NODE[or]     Description          Load  Load       Actions -or- displacements\par  MEMB.\fs15 proportn\fs20   of the load          axes  type     F\dn6 x\dn0 /w\dn6 X\dn0 /d\dn6 X\dn0    F\dn6 y\dn0 /w\dn6 Y\dn0 /d\dn6 Y\dn0    M\dn6 z\dn0 /m\dn6 Z\dn0 /r\dn6 Z\dn0    \par  -----------|---------------------|----|--------|----------|----------|----------\par 
+    1          AAA                  G   N)ode Ld                -1.100\par 
+    2.6        BBB                  G   P)ointLd                -2.200\par 
+    3.25       CCC                  G   P)ointLd                -3.333\par 
+    4          DDDddd               G   U)DL         -3.333     -4.444\par 
+    5          EEE                  G   U)DL                    -5.555\par 
+    6          FFF                  G   U)DL                    -6.667\par 
+    7          GGG                  G   U)DL                    -7.778\par 
+    8          HHH                  G   U)DL                    -8.889\par 
+\par \par \par \f1 \b  LOAD CASE 2: SLS SW STEEL FRAME ONLY\par \b0 \f0  NODE[or]     Description          Load  Load       Actions -or- displacements\par  MEMB.\fs15 proportn\fs20   of the load          axes  type     F\dn6 x\dn0 /w\dn6 X\dn0 /d\dn6 X\dn0    F\dn6 y\dn0 /w\dn6 Y\dn0 /d\dn6 Y\dn0    M\dn6 z\dn0 /m\dn6 Z\dn0 /r\dn6 Z\dn0    \par  -----------|---------------------|----|--------|----------|----------|----------\par 
+    2          Self weight          G   D)ensity               -22.222\par 
+    2          Self weight          G   D)ensity               -76.975\par 
+\par \par \par \f1 \b  LOAD CASE 3: --\par \b0 \f0  NODE[or]     Description          Load  Load       Actions -or- displacements\par  MEMB.\fs15 proportn\fs20   of the load          axes  type     F\dn6 x\dn0 /w\dn6 X\dn0 /d\dn6 X\dn0    F\dn6 y\dn0 /w\dn6 Y\dn0 /d\dn6 Y\dn0    M\dn6 z\dn0 /m\dn6 Z\dn0 /r\dn6 Z\dn0    \par  -----------|---------------------|----|--------|----------|----------|----------\par 
+    2          UDL                  G   U)DL                   -10.000\par 
+\par \par \par \f1 \b  LOAD CASE 4: --\par \b0 \f0  NODE[or]     Description          Load  Load       Actions -or- displacements\par  MEMB.\fs15 proportn\fs20   of the load          axes  type     F\dn6 x\dn0 /w\dn6 X\dn0 /d\dn6 X\dn0    F\dn6 y\dn0 /w\dn6 Y\dn0 /d\dn6 Y\dn0    M\dn6 z\dn0 /m\dn6 Z\dn0 /r\dn6 Z\dn0    \par  -----------|---------------------|----|--------|----------|----------|----------\par 
+    2          udl                  G   U)DL                   -10.000\par 
+\par \par \par \f1 \b  LOAD CASE 5: --\par \b0 \f0  NODE[or]     Description          Load  Load       Actions -or- displacements\par  MEMB.\fs15 proportn\fs20   of the load          axes  type     F\dn6 x\dn0 /w\dn6 X\dn0 /d\dn6 X\dn0    F\dn6 y\dn0 /w\dn6 Y\dn0 /d\dn6 Y\dn0    M\dn6 z\dn0 /m\dn6 Z\dn0 /r\dn6 Z\dn0    \par  -----------|---------------------|----|--------|----------|----------|----------\par 
+    2.5        Point load           G   P)ointLd               -10.000\par 
+\page
+-----------------------------------------------------------------------------------\line 
+INSTRUCT ver.1.26                 \f1 \b Few-nodes model\b0 \f0                   Page :      .004\line 
+-----------------------------------------------------------------------------------\line 
+\line 
+\line 
+\line 
+\line 
+                           \f1 \b DISPLACEMENTS - Load case  1                                                              \b0 \f0 \par \par
+                 \f1 \b NODE           d(x)          d(y)          r(z)                                           \b0 \f0 \par
+                   1         -0.010997     -0.000227     -0.000129                                                            \par
+                   2         -0.010484     -0.001857     -0.000226                                                            \par
+                   3         -0.010579     -0.002024      0.000328                                                            \par
+                   4         -0.010601     -0.001487      0.000373                                                            \par
+                   5         -0.010623     -0.001001      0.000224                                                            \par
+                   6         -0.010793     -0.001102     -0.000022                                                            \par
+                   7         -0.010538     -0.000165      0.000431                                                            \par
+                   8         -0.010876     -0.001903     -0.000216                                                            \par
+                   9         -0.010773     -0.002496      0.000125                                                            \par
+                  10         -0.010671     -0.001130      0.000012                                                            \par
+                  11         -0.010388     -0.002337     -0.000086                                                            \par
+                  12         -0.010515     -0.000920     -0.000085                                                            \par
+                  13          0.000000      0.000000      0.000000                                                            \par
+                  14          0.000000      0.000000      0.003112                                                            \par
+\line 
+\line 
+\line 
+\line 
+                           \f1 \b DISPLACEMENTS - Load case  2                                                              \b0 \f0 \par \par
+                 \f1 \b NODE           d(x)          d(y)          r(z)                                           \b0 \f0 \par
+                   1          0.000044     -0.000030     -0.000041                                                            \par
+                   2          0.000165     -0.000401     -0.000019                                                            \par
+                   3          0.000115     -0.000376      0.000064                                                            \par
+                   4          0.000111     -0.000266      0.000074                                                            \par
+                   5          0.000107     -0.000177      0.000036                                                            \par
+                   6          0.000083     -0.000184     -0.000007                                                            \par
+                   7          0.000133     -0.000019      0.000019                                                            \par
+                   8          0.000072     -0.000419     -0.000170                                                            \par
+                   9          0.000092     -0.001948      0.000129                                                            \par
+                  10          0.000113     -0.000191      0.000090                                                            \par
+                  11          0.000240     -0.000558      0.000027                                                            \par
+                  12          0.000077     -0.000221     -0.000033                                                            \par
+                  13          0.000000      0.000000      0.000000                                                            \par
+                  14          0.000000      0.000000     -0.000051                                                            \par
+\line 
+\line 
+\line 
+\line 
+                           \f1 \b DISPLACEMENTS - Load case  3                                                              \b0 \f0 \par \par
+                 \f1 \b NODE           d(x)          d(y)          r(z)                                           \b0 \f0 \par
+                   1          0.000177     -0.000121     -0.000164                                                            \par
+                   2          0.000665     -0.001616     -0.000078                                                            \par
+                   3          0.000462     -0.001516      0.000259                                                            \par
+                   4          0.000448     -0.001073      0.000300                                                            \par
+                   5          0.000433     -0.000714      0.000146                                                            \par
+                   6          0.000333     -0.000741     -0.000027                                                            \par
+\page
+-----------------------------------------------------------------------------------\line 
+INSTRUCT ver.1.26                 \f1 \b Few-nodes model\b0 \f0                   Page :      .005\line 
+-----------------------------------------------------------------------------------\line 
+\line 
+\line 
+\line 
+\line 
+                           \f1 \b DISPLACEMENTS - Load case  3                                                              \b0 \f0 \par \par
+                 \f1 \b NODE           d(x)          d(y)          r(z)                                           \b0 \f0 \par
+                   7          0.000534     -0.000075      0.000077                                                            \par
+                   8          0.000290     -0.001688     -0.000685                                                            \par
+                   9          0.000373     -0.007855      0.000522                                                            \par
+                  10          0.000456     -0.000769      0.000362                                                            \par
+                  11          0.000966     -0.002252      0.000109                                                            \par
+                  12          0.000309     -0.000890     -0.000132                                                            \par
+                  13          0.000000      0.000000      0.000000                                                            \par
+                  14          0.000000      0.000000     -0.000207                                                            \par
+\line 
+\line 
+\line 
+\line 
+                           \f1 \b DISPLACEMENTS - Load case  4                                                              \b0 \f0 \par \par
+                 \f1 \b NODE           d(x)          d(y)          r(z)                                           \b0 \f0 \par
+                   1          0.000177     -0.000121     -0.000164                                                            \par
+                   2          0.000665     -0.001616     -0.000078                                                            \par
+                   3          0.000462     -0.001516      0.000259                                                            \par
+                   4          0.000448     -0.001073      0.000300                                                            \par
+                   5          0.000433     -0.000714      0.000146                                                            \par
+                   6          0.000333     -0.000741     -0.000027                                                            \par
+                   7          0.000534     -0.000075      0.000077                                                            \par
+                   8          0.000290     -0.001688     -0.000685                                                            \par
+                   9          0.000373     -0.007855      0.000522                                                            \par
+                  10          0.000456     -0.000769      0.000362                                                            \par
+                  11          0.000966     -0.002252      0.000109                                                            \par
+                  12          0.000309     -0.000890     -0.000132                                                            \par
+                  13          0.000000      0.000000      0.000000                                                            \par
+                  14          0.000000      0.000000     -0.000207                                                            \par
+\line 
+\line 
+\line 
+\line 
+                           \f1 \b DISPLACEMENTS - Load case  5                                                              \b0 \f0 \par \par
+                 \f1 \b NODE           d(x)          d(y)          r(z)                                           \b0 \f0 \par
+                   1          0.000023     -0.000017     -0.000022                                                            \par
+                   2          0.000097     -0.000243     -0.000011                                                            \par
+                   3          0.000067     -0.000229      0.000042                                                            \par
+                   4          0.000065     -0.000156      0.000049                                                            \par
+                   5          0.000062     -0.000096      0.000025                                                            \par
+                   6          0.000048     -0.000101     -0.000005                                                            \par
+                   7          0.000075     -0.000011      0.000011                                                            \par
+                   8          0.000039     -0.000254     -0.000116                                                            \par
+                   9          0.000051     -0.001152      0.000106                                                            \par
+                  10          0.000063     -0.000104      0.000049                                                            \par
+                  11          0.000152     -0.000350      0.000018                                                            \par
+                  12          0.000048     -0.000117     -0.000020                                                            \par
+                  13          0.000000      0.000000      0.000000                                                            \par
+                  14          0.000000      0.000000     -0.000029                                                            \par
+\line 
+\line 
+\page
+-----------------------------------------------------------------------------------\line 
+INSTRUCT ver.1.26                 \f1 \b Few-nodes model\b0 \f0                   Page :      .006\line 
+-----------------------------------------------------------------------------------\line 
+\line 
+\line 
+\line 
+\line 
+                           \f1 \b MEMBER ACTIONS - Load case  1                                                             \b0 \f0 \par \par
+\f1 \b NODE      M(z)      F(y)      F(x)     MEMBER     F(x)      F(y)      M(z)    NODE        \b0 \f0 \par
+  1      12.120     3.187  -118.438   \cf11 \f1 \b     1\b0 \f0 \cf1      118.438    -3.187     8.595     8   \par
+  8      -0.098     1.776   -74.881   \cf11 \f1 \b     2\b0 \f0 \cf1       74.881     0.424     6.367     9   \par
+  9      -6.367    -0.424   -74.881   \cf11 \f1 \b     3\b0 \f0 \cf1       74.881     3.757   -14.102    10   \par
+ 10      15.980    16.616   -94.340   \cf11 \f1 \b     4\b0 \f0 \cf1      116.004    12.270    -1.857     7   \par
+\line 
+  1      30.266    19.820   156.801   \cf11 \f1 \b     5\b0 \f0 \cf1     -142.914    13.510    -9.757     2   \par
+  2      18.878    22.592   157.259   \cf11 \f1 \b     6\b0 \f0 \cf1     -140.591    17.410    -2.039     3   \par
+  3      -6.466     0.572    93.560   \cf11 \f1 \b     7\b0 \f0 \cf1      -93.560    11.095    -1.426     4   \par
+  4       1.426   -11.095    93.560   \cf11 \f1 \b     8\b0 \f0 \cf1      -93.560    24.428   -28.069     5   \par
+  5      20.245     4.696   115.265   \cf11 \f1 \b     9\b0 \f0 \cf1     -115.265    -4.696    10.281     6   \par
+  6      -2.306     2.113   121.555   \cf11 \f1 \b    10\b0 \f0 \cf1     -121.555    -2.113    16.042     7   \par
+\line 
+  8       0.194     1.170   -56.932   \cf11 \f1 \b    11\b0 \f0 \cf1       56.932    -1.170     4.155    11   \par
+ 11      -4.155     1.170   -56.932   \cf11 \f1 \b    12\b0 \f0 \cf1       56.932    -1.170     8.505     3   \par
+\line 
+ 12      -1.620     1.669   -21.309   \cf11 \f1 \b    13\b0 \f0 \cf1       21.309    -1.669     7.823     5   \par
+ 10       4.583     1.669   -21.309   \cf11 \f1 \b    14\b0 \f0 \cf1       21.309    -1.669     1.620    12   \par
+\line 
+  8      -8.691    -6.987    38.214   \cf11 \f1 \b    15\b0 \f0 \cf1      -38.214     6.987    -9.121     2   \par
+\line 
+ 10      -6.461    -5.662    -3.767   \cf11 \f1 \b    16\b0 \f0 \cf1        3.767     5.662    -7.975     6   \par
+\line 
+ 13     -41.666   -18.678    82.891   \cf11 \f1 \b    17\b0 \f0 \cf1      -82.891    18.678   -42.386     1   \par
+\line 
+ 14      -0.000    -2.986    57.072   \cf11 \f1 \b    18\b0 \f0 \cf1      -57.072     2.986   -14.185     7   \par
+\par                Node equilibrium  :      F(x)        F(y)        M(z)                      \par
+                 3   Max err(x)  :     0.00000                                                                \par
+                10   Max err(y)  :                 0.00000                                                    \par
+                 4   Max err(z)  :                             0.00000                                        \par
+               Mean nodal errors :     0.00000     0.00000     0.00000                                        \par
+\line 
+\line 
+\line 
+\line 
+                           \f1 \b MEMBER ACTIONS - Load case  2                                                             \b0 \f0 \par \par
+\f1 \b NODE      M(z)      F(y)      F(x)     MEMBER     F(x)      F(y)      M(z)    NODE        \b0 \f0 \par
+  1      -2.905    -1.699   -27.322   \cf11 \f1 \b     1\b0 \f0 \cf1       27.322     1.699    -8.140     8   \par
+  8      23.393    13.745   -15.049   \cf11 \f1 \b     2\b0 \f0 \cf1       15.049     3.615    12.062     9   \par
+  9     -12.062    -3.615   -15.049   \cf11 \f1 \b     3\b0 \f0 \cf1       15.049     3.615   -13.241    10   \par
+ 10       3.834     0.830   -15.385   \cf11 \f1 \b     4\b0 \f0 \cf1       15.385    -0.830     1.562     7   \par
+\line 
+  1       3.195     1.116    30.150   \cf11 \f1 \b     5\b0 \f0 \cf1      -30.150    -1.116     4.060     2   \par
+  2       0.255     0.599    36.182   \cf11 \f1 \b     6\b0 \f0 \cf1      -36.182    -0.599     3.639     3   \par
+  3      -2.990    -2.818    15.128   \cf11 \f1 \b     7\b0 \f0 \cf1      -15.128     2.818    -1.237     4   \par
+  4       1.237    -2.818    15.128   \cf11 \f1 \b     8\b0 \f0 \cf1      -15.128     2.818    -5.463     5   \par
+  5       2.948     0.640    19.924   \cf11 \f1 \b     9\b0 \f0 \cf1      -19.924    -0.640     1.213     6   \par
+\page
+-----------------------------------------------------------------------------------\line 
+INSTRUCT ver.1.26                 \f1 \b Few-nodes model\b0 \f0                   Page :      .007\line 
+-----------------------------------------------------------------------------------\line 
+\line 
+\line 
+\line 
+\line 
+                           \f1 \b MEMBER ACTIONS - Load case  2                                                             \b0 \f0 \par \par
+\f1 \b NODE      M(z)      F(y)      F(x)     MEMBER     F(x)      F(y)      M(z)    NODE        \b0 \f0 \par
+  6      -2.982    -0.756    17.067   \cf11 \f1 \b    10\b0 \f0 \cf1      -17.067     0.756    -1.935     7   \par
+\line 
+  8      -4.228    -0.656   -24.977   \cf11 \f1 \b    11\b0 \f0 \cf1       24.977     0.656     1.789    11   \par
+ 11      -1.789    -0.656   -24.977   \cf11 \f1 \b    12\b0 \f0 \cf1       24.977     0.656    -0.649     3   \par
+\line 
+ 12       0.410     0.787    -5.459   \cf11 \f1 \b    13\b0 \f0 \cf1        5.459    -0.787     2.515     5   \par
+ 10       3.336     0.787    -5.459   \cf11 \f1 \b    14\b0 \f0 \cf1        5.459    -0.787    -0.410    12   \par
+\line 
+  8     -11.025    -6.017     0.676   \cf11 \f1 \b    15\b0 \f0 \cf1       -0.676     6.017    -4.315     2   \par
+\line 
+ 10       6.071     3.075    -0.809   \cf11 \f1 \b    16\b0 \f0 \cf1        0.809    -3.075     1.769     6   \par
+\line 
+ 13      -0.063    -0.079    10.927   \cf11 \f1 \b    17\b0 \f0 \cf1      -10.927     0.079    -0.290     1   \par
+\line 
+ 14       0.000     0.079     6.433   \cf11 \f1 \b    18\b0 \f0 \cf1       -6.433    -0.079     0.373     7   \par
+\par                Node equilibrium  :      F(x)        F(y)        M(z)                      \par
+                 3   Max err(x)  :     0.00000                                                                \par
+                 8   Max err(y)  :                 0.00000                                                    \par
+                 4   Max err(z)  :                             0.00000                                        \par
+               Mean nodal errors :     0.00000     0.00000     0.00000                                        \par
+\line 
+\line 
+\line 
+\line 
+                           \f1 \b MEMBER ACTIONS - Load case  3                                                             \b0 \f0 \par \par
+\f1 \b NODE      M(z)      F(y)      F(x)     MEMBER     F(x)      F(y)      M(z)    NODE        \b0 \f0 \par
+  1     -11.714    -6.852  -110.175   \cf11 \f1 \b     1\b0 \f0 \cf1      110.175     6.852   -32.825     8   \par
+  8      94.329    55.424   -60.685   \cf11 \f1 \b     2\b0 \f0 \cf1       60.685    14.576    48.640     9   \par
+  9     -48.640   -14.576   -60.685   \cf11 \f1 \b     3\b0 \f0 \cf1       60.685    14.576   -53.391    10   \par
+ 10      15.458     3.347   -62.038   \cf11 \f1 \b     4\b0 \f0 \cf1       62.038    -3.347     6.300     7   \par
+\line 
+  1      12.884     4.501   121.574   \cf11 \f1 \b     5\b0 \f0 \cf1     -121.574    -4.501    16.371     2   \par
+  2       1.027     2.416   145.899   \cf11 \f1 \b     6\b0 \f0 \cf1     -145.899    -2.416    14.674     3   \par
+  3     -12.057   -11.362    61.002   \cf11 \f1 \b     7\b0 \f0 \cf1      -61.002    11.362    -4.986     4   \par
+  4       4.986   -11.362    61.002   \cf11 \f1 \b     8\b0 \f0 \cf1      -61.002    11.362   -22.030     5   \par
+  5      11.888     2.581    80.341   \cf11 \f1 \b     9\b0 \f0 \cf1      -80.341    -2.581     4.890     6   \par
+  6     -12.023    -3.050    68.822   \cf11 \f1 \b    10\b0 \f0 \cf1      -68.822     3.050    -7.804     7   \par
+\line 
+  8     -17.047    -2.645  -100.717   \cf11 \f1 \b    11\b0 \f0 \cf1      100.717     2.645     7.215    11   \par
+ 11      -7.215    -2.645  -100.717   \cf11 \f1 \b    12\b0 \f0 \cf1      100.717     2.645    -2.617     3   \par
+\line 
+ 12       1.655     3.174   -22.011   \cf11 \f1 \b    13\b0 \f0 \cf1       22.011    -3.174    10.142     5   \par
+ 10      13.452     3.174   -22.011   \cf11 \f1 \b    14\b0 \f0 \cf1       22.011    -3.174    -1.655    12   \par
+\line 
+  8     -44.456   -24.261     2.726   \cf11 \f1 \b    15\b0 \f0 \cf1       -2.726    24.261   -17.398     2   \par
+\line 
+ 10      24.480    12.400    -3.263   \cf11 \f1 \b    16\b0 \f0 \cf1        3.263   -12.400     7.133     6   \par
+\line 
+ 13      -0.255    -0.317    44.062   \cf11 \f1 \b    17\b0 \f0 \cf1      -44.062     0.317    -1.170     1   \par
+\page
+-----------------------------------------------------------------------------------\line 
+INSTRUCT ver.1.26                 \f1 \b Few-nodes model\b0 \f0                   Page :      .008\line 
+-----------------------------------------------------------------------------------\line 
+\line 
+\line 
+\line 
+\line 
+                           \f1 \b MEMBER ACTIONS - Load case  3                                                             \b0 \f0 \par \par
+\f1 \b NODE      M(z)      F(y)      F(x)     MEMBER     F(x)      F(y)      M(z)    NODE        \b0 \f0 \par
+\line 
+ 14       0.000     0.317    25.938   \cf11 \f1 \b    18\b0 \f0 \cf1      -25.938    -0.317     1.504     7   \par
+\par                Node equilibrium  :      F(x)        F(y)        M(z)                      \par
+                 3   Max err(x)  :     0.00000                                                                \par
+                 5   Max err(y)  :                 0.00000                                                    \par
+                 4   Max err(z)  :                             0.00000                                        \par
+               Mean nodal errors :     0.00000     0.00000     0.00000                                        \par
+\line 
+\line 
+\line 
+\line 
+                           \f1 \b MEMBER ACTIONS - Load case  4                                                             \b0 \f0 \par \par
+\f1 \b NODE      M(z)      F(y)      F(x)     MEMBER     F(x)      F(y)      M(z)    NODE        \b0 \f0 \par
+  1     -11.714    -6.852  -110.175   \cf11 \f1 \b     1\b0 \f0 \cf1      110.175     6.852   -32.825     8   \par
+  8      94.329    55.424   -60.685   \cf11 \f1 \b     2\b0 \f0 \cf1       60.685    14.576    48.640     9   \par
+  9     -48.640   -14.576   -60.685   \cf11 \f1 \b     3\b0 \f0 \cf1       60.685    14.576   -53.391    10   \par
+ 10      15.458     3.347   -62.038   \cf11 \f1 \b     4\b0 \f0 \cf1       62.038    -3.347     6.300     7   \par
+\line 
+  1      12.884     4.501   121.574   \cf11 \f1 \b     5\b0 \f0 \cf1     -121.574    -4.501    16.371     2   \par
+  2       1.027     2.416   145.899   \cf11 \f1 \b     6\b0 \f0 \cf1     -145.899    -2.416    14.674     3   \par
+  3     -12.057   -11.362    61.002   \cf11 \f1 \b     7\b0 \f0 \cf1      -61.002    11.362    -4.986     4   \par
+  4       4.986   -11.362    61.002   \cf11 \f1 \b     8\b0 \f0 \cf1      -61.002    11.362   -22.030     5   \par
+  5      11.888     2.581    80.341   \cf11 \f1 \b     9\b0 \f0 \cf1      -80.341    -2.581     4.890     6   \par
+  6     -12.023    -3.050    68.822   \cf11 \f1 \b    10\b0 \f0 \cf1      -68.822     3.050    -7.804     7   \par
+\line 
+  8     -17.047    -2.645  -100.717   \cf11 \f1 \b    11\b0 \f0 \cf1      100.717     2.645     7.215    11   \par
+ 11      -7.215    -2.645  -100.717   \cf11 \f1 \b    12\b0 \f0 \cf1      100.717     2.645    -2.617     3   \par
+\line 
+ 12       1.655     3.174   -22.011   \cf11 \f1 \b    13\b0 \f0 \cf1       22.011    -3.174    10.142     5   \par
+ 10      13.452     3.174   -22.011   \cf11 \f1 \b    14\b0 \f0 \cf1       22.011    -3.174    -1.655    12   \par
+\line 
+  8     -44.456   -24.261     2.726   \cf11 \f1 \b    15\b0 \f0 \cf1       -2.726    24.261   -17.398     2   \par
+\line 
+ 10      24.480    12.400    -3.263   \cf11 \f1 \b    16\b0 \f0 \cf1        3.263   -12.400     7.133     6   \par
+\line 
+ 13      -0.255    -0.317    44.062   \cf11 \f1 \b    17\b0 \f0 \cf1      -44.062     0.317    -1.170     1   \par
+\line 
+ 14       0.000     0.317    25.938   \cf11 \f1 \b    18\b0 \f0 \cf1      -25.938    -0.317     1.504     7   \par
+\par                Node equilibrium  :      F(x)        F(y)        M(z)                      \par
+                 3   Max err(x)  :     0.00000                                                                \par
+                 5   Max err(y)  :                 0.00000                                                    \par
+                 4   Max err(z)  :                             0.00000                                        \par
+               Mean nodal errors :     0.00000     0.00000     0.00000                                        \par
+\line 
+\line 
+\line 
+\line 
+                           \f1 \b MEMBER ACTIONS - Load case  5                                                             \b0 \f0 \par \par
+\f1 \b NODE      M(z)      F(y)      F(x)     MEMBER     F(x)      F(y)      M(z)    NODE        \b0 \f0 \par
+\page
+-----------------------------------------------------------------------------------\line 
+INSTRUCT ver.1.26                 \f1 \b Few-nodes model\b0 \f0                   Page :      .009\line 
+-----------------------------------------------------------------------------------\line 
+  1      -2.051    -1.217   -16.034   \cf11 \f1 \b     1\b0 \f0 \cf1       16.034     1.217    -5.860     8   \par
+  8      16.483     8.155    -8.949   \cf11 \f1 \b     2\b0 \f0 \cf1        8.949     1.845     5.604     9   \par
+  9      -5.604    -1.845    -8.949   \cf11 \f1 \b     3\b0 \f0 \cf1        8.949     1.845    -7.310    10   \par
+ 10       2.095     0.456    -8.829   \cf11 \f1 \b     4\b0 \f0 \cf1        8.829    -0.456     0.869     7   \par
+\line 
+  1       2.211     0.750    17.731   \cf11 \f1 \b     5\b0 \f0 \cf1      -17.731    -0.750     2.662     2   \par
+  2       0.377     0.446    21.975   \cf11 \f1 \b     6\b0 \f0 \cf1      -21.975    -0.446     2.519     3   \par
+  3      -2.036    -1.861     8.993   \cf11 \f1 \b     7\b0 \f0 \cf1       -8.993     1.861    -0.755     4   \par
+  4       0.755    -1.861     8.993   \cf11 \f1 \b     8\b0 \f0 \cf1       -8.993     1.861    -3.546     5   \par
+  5       2.005     0.431    11.306   \cf11 \f1 \b     9\b0 \f0 \cf1      -11.306    -0.431     0.798     6   \par
+  6      -1.709    -0.429     9.791   \cf11 \f1 \b    10\b0 \f0 \cf1       -9.791     0.429    -1.078     7   \par
+\line 
+  8      -2.899    -0.455   -15.442   \cf11 \f1 \b    11\b0 \f0 \cf1       15.442     0.455     1.208    11   \par
+ 11      -1.208    -0.455   -15.442   \cf11 \f1 \b    12\b0 \f0 \cf1       15.442     0.455    -0.484     3   \par
+\line 
+ 12       0.183     0.464    -2.596   \cf11 \f1 \b    13\b0 \f0 \cf1        2.596    -0.464     1.542     5   \par
+ 10       1.908     0.464    -2.596   \cf11 \f1 \b    14\b0 \f0 \cf1        2.596    -0.464    -0.183    12   \par
+\line 
+  8      -7.724    -4.221     0.534   \cf11 \f1 \b    15\b0 \f0 \cf1       -0.534     4.221    -3.038     2   \par
+\line 
+ 10       3.306     1.654    -0.546   \cf11 \f1 \b    16\b0 \f0 \cf1        0.546    -1.654     0.911     6   \par
+\line 
+ 13      -0.038    -0.044     6.294   \cf11 \f1 \b    17\b0 \f0 \cf1       -6.294     0.044    -0.160     1   \par
+\line 
+ 14       0.000     0.044     3.706   \cf11 \f1 \b    18\b0 \f0 \cf1       -3.706    -0.044     0.210     7   \par
+\par                Node equilibrium  :      F(x)        F(y)        M(z)                      \par
+                 5   Max err(x)  :     0.00000                                                                \par
+                 8   Max err(y)  :                 0.00000                                                    \par
+                 3   Max err(z)  :                             0.00000                                        \par
+               Mean nodal errors :     0.00000     0.00000     0.00000                                        \par
+\page
+-----------------------------------------------------------------------------------\line 
+INSTRUCT ver.1.26                 \f1 \b Few-nodes model\b0 \f0                   Page :      .010\line 
+-----------------------------------------------------------------------------------\line 
+\line 
+\line 
+\line 
+\line 
+                             \f1 \b REACTIONS - Load case  1                                                                  \b0 \f0 \par \par
+               \f1 \b NODE              F(x)          F(y)          M(z)                                        \b0 \f0 \par
+\line 
+                13              18.6782       82.8907      -41.6660
+\line 
+                14               2.9863       57.0718
+\line 
+                            -----------   -----------                                                                        \par
+              Reactions:         21.664       139.962                                                                       \par
+              Loads    :        -21.664      -139.962                                                                       \par
+              Errors   :       -0.00000      -0.00000                                                                       \par
+\line 
+\line 
+\line 
+\line 
+                             \f1 \b REACTIONS - Load case  2                                                                  \b0 \f0 \par \par
+               \f1 \b NODE              F(x)          F(y)          M(z)                                        \b0 \f0 \par
+\line 
+                13               0.0785       10.9270       -0.0633
+\line 
+                14              -0.0785        6.4325
+\line 
+                            -----------   -----------                                                                        \par
+              Reactions:          0.000        17.359                                                                       \par
+              Loads    :          0.000       -17.359                                                                       \par
+              Errors   :        0.00000      -0.00000                                                                       \par
+\line 
+\line 
+\line 
+\line 
+                             \f1 \b REACTIONS - Load case  3                                                                  \b0 \f0 \par \par
+               \f1 \b NODE              F(x)          F(y)          M(z)                                        \b0 \f0 \par
+\line 
+                13               0.3167       44.0617       -0.2551
+\line 
+                14              -0.3167       25.9383
+\line 
+                            -----------   -----------                                                                        \par
+              Reactions:          0.000        70.000                                                                       \par
+              Loads    :          0.000       -70.000                                                                       \par
+              Errors   :        0.00000       0.00000                                                                       \par
+\page
+-----------------------------------------------------------------------------------\line 
+INSTRUCT ver.1.26                 \f1 \b Few-nodes model\b0 \f0                   Page :      .011\line 
+-----------------------------------------------------------------------------------\line 
+\line 
+\line 
+\line 
+\line 
+                             \f1 \b REACTIONS - Load case  4                                                                  \b0 \f0 \par \par
+               \f1 \b NODE              F(x)          F(y)          M(z)                                        \b0 \f0 \par
+\line 
+                13               0.3167       44.0617       -0.2551
+\line 
+                14              -0.3167       25.9383
+\line 
+                            -----------   -----------                                                                        \par
+              Reactions:          0.000        70.000                                                                       \par
+              Loads    :          0.000       -70.000                                                                       \par
+              Errors   :        0.00000       0.00000                                                                       \par
+\line 
+\line 
+\line 
+\line 
+                             \f1 \b REACTIONS - Load case  5                                                                  \b0 \f0 \par \par
+               \f1 \b NODE              F(x)          F(y)          M(z)                                        \b0 \f0 \par
+\line 
+                13               0.0441        6.2945       -0.0381
+\line 
+                14              -0.0441        3.7055
+\line 
+                            -----------   -----------                                                                        \par
+              Reactions:         -0.000        10.000                                                                       \par
+              Loads    :          0.000       -10.000                                                                       \par
+              Errors   :       -0.00000       0.00000                                                                       \par
+\page
+-----------------------------------------------------------------------------------\line 
+INSTRUCT ver.1.26                 \f1 \b Few-nodes model\b0 \f0                   Page :      .012\line 
+-----------------------------------------------------------------------------------\line 
+\line 
+\line 
+\line 
+\line 
+                     \f1 \b DISPLACEMENTS - Load combination  1: SLS                                                  \b0 \f0 \par
+                     \fs15 1.000  x  LCase  1: SINGLE VERT LOAD AT APEX\fs20 \par
+                     \fs15 1.000  x  LCase  2: SLS SW STEEL FRAME ONLY\fs20 \par
+\par                  \f1 \b NODE           d(x)          d(y)          r(z)                                           \b0 \f0 \par
+                   1         -0.010953     -0.000257     -0.000170                                                            \par
+                   2         -0.010319     -0.002257     -0.000245                                                            \par
+                   3         -0.010465     -0.002400      0.000392                                                            \par
+                   4         -0.010490     -0.001753      0.000448                                                            \par
+                   5         -0.010516     -0.001178      0.000260                                                            \par
+                   6         -0.010711     -0.001286     -0.000029                                                            \par
+                   7         -0.010405     -0.000184      0.000450                                                            \par
+                   8         -0.010804     -0.002321     -0.000386                                                            \par
+                   9         -0.010681     -0.004444      0.000254                                                            \par
+                  10         -0.010558     -0.001320      0.000102                                                            \par
+                  11         -0.010148     -0.002896     -0.000059                                                            \par
+                  12         -0.010438     -0.001140     -0.000118                                                            \par
+                  13          0.000000      0.000000      0.000000                                                            \par
+                  14          0.000000      0.000000      0.003061                                                            \par
+\line 
+\line 
+\line 
+\line 
+                     \f1 \b DISPLACEMENTS - Load combination  2: ULS                                                  \b0 \f0 \par
+                     \fs15 1.400  x  LCase  1: SINGLE VERT LOAD AT APEX\fs20 \par
+                     \fs15 1.600  x  LCase  2: SLS SW STEEL FRAME ONLY\fs20 \par
+\par                  \f1 \b NODE           d(x)          d(y)          r(z)                                           \b0 \f0 \par
+                   1         -0.015325     -0.000366     -0.000246                                                            \par
+                   2         -0.014414     -0.003240     -0.000347                                                            \par
+                   3         -0.014628     -0.003435      0.000562                                                            \par
+                   4         -0.014664     -0.002507      0.000641                                                            \par
+                   5         -0.014701     -0.001685      0.000372                                                            \par
+                   6         -0.014979     -0.001837     -0.000041                                                            \par
+                   7         -0.014541     -0.000261      0.000634                                                            \par
+                   8         -0.015111     -0.003334     -0.000574                                                            \par
+                   9         -0.014935     -0.006611      0.000382                                                            \par
+                  10         -0.014759     -0.001887      0.000161                                                            \par
+                  11         -0.014159     -0.004166     -0.000078                                                            \par
+                  12         -0.014598     -0.001641     -0.000171                                                            \par
+                  13          0.000000      0.000000      0.000000                                                            \par
+                  14          0.000000      0.000000      0.004275                                                            \par
+\line 
+\line 
+\page
+-----------------------------------------------------------------------------------\line 
+INSTRUCT ver.1.26                 \f1 \b Few-nodes model\b0 \f0                   Page :      .013\line 
+-----------------------------------------------------------------------------------\line 
+\line 
+\line 
+\line 
+\line 
+                     \f1 \b MEMBER ACTIONS - Load combination  1: SLS                                                 \b0 \f0 \par
+                     \fs15 1.000  x  LCase  1: SINGLE VERT LOAD AT APEX\fs20 \par
+                     \fs15 1.000  x  LCase  2: SLS SW STEEL FRAME ONLY\fs20 \par
+\par \f1 \b NODE      M(z)      F(y)      F(x)     MEMBER     F(x)      F(y)      M(z)    NODE        \b0 \f0 \par
+  1       9.215     1.488  -145.761   \cf11 \f1 \b     1\b0 \f0 \cf1      145.761    -1.488     0.455     8   \par
+  8      23.295    15.520   -89.931   \cf11 \f1 \b     2\b0 \f0 \cf1       89.931     4.039    18.430     9   \par
+  9     -18.430    -4.039   -89.931   \cf11 \f1 \b     3\b0 \f0 \cf1       89.931     7.372   -27.342    10   \par
+ 10      19.813    17.446  -109.725   \cf11 \f1 \b     4\b0 \f0 \cf1      131.389    11.440    -0.295     7   \par
+\line 
+  1      33.461    20.936   186.951   \cf11 \f1 \b     5\b0 \f0 \cf1     -173.063    12.394    -5.697     2   \par
+  2      19.133    23.191   193.441   \cf11 \f1 \b     6\b0 \f0 \cf1     -176.773    16.811     1.600     3   \par
+  3      -9.456    -2.246   108.688   \cf11 \f1 \b     7\b0 \f0 \cf1     -108.688    13.913    -2.663     4   \par
+  4       2.663   -13.913   108.688   \cf11 \f1 \b     8\b0 \f0 \cf1     -108.688    27.246   -33.532     5   \par
+  5      23.193     5.336   135.188   \cf11 \f1 \b     9\b0 \f0 \cf1     -135.188    -5.336    11.494     6   \par
+  6      -5.288     1.357   138.623   \cf11 \f1 \b    10\b0 \f0 \cf1     -138.623    -1.357    14.107     7   \par
+\line 
+  8      -4.033     0.514   -81.909   \cf11 \f1 \b    11\b0 \f0 \cf1       81.909    -0.514     5.945    11   \par
+ 11      -5.945     0.514   -81.909   \cf11 \f1 \b    12\b0 \f0 \cf1       81.909    -0.514     7.856     3   \par
+\line 
+ 12      -1.210     2.456   -26.768   \cf11 \f1 \b    13\b0 \f0 \cf1       26.768    -2.456    10.339     5   \par
+ 10       7.919     2.456   -26.768   \cf11 \f1 \b    14\b0 \f0 \cf1       26.768    -2.456     1.210    12   \par
+\line 
+  8     -19.716   -13.003    38.890   \cf11 \f1 \b    15\b0 \f0 \cf1      -38.890    13.003   -13.436     2   \par
+\line 
+ 10      -0.390    -2.587    -4.576   \cf11 \f1 \b    16\b0 \f0 \cf1        4.576     2.587    -6.206     6   \par
+\line 
+ 13     -41.729   -18.757    93.818   \cf11 \f1 \b    17\b0 \f0 \cf1      -93.818    18.757   -42.676     1   \par
+\line 
+ 14      -0.000    -2.908    63.504   \cf11 \f1 \b    18\b0 \f0 \cf1      -63.504     2.908   -13.812     7   \par
+\line 
+\line 
+\line 
+\line 
+                     \f1 \b MEMBER ACTIONS - Load combination  2: ULS                                                 \b0 \f0 \par
+                     \fs15 1.400  x  LCase  1: SINGLE VERT LOAD AT APEX\fs20 \par
+                     \fs15 1.600  x  LCase  2: SLS SW STEEL FRAME ONLY\fs20 \par
+\par \f1 \b NODE      M(z)      F(y)      F(x)     MEMBER     F(x)      F(y)      M(z)    NODE        \b0 \f0 \par
+  1      12.320     1.743  -209.529   \cf11 \f1 \b     1\b0 \f0 \cf1      209.529    -1.743    -0.992     8   \par
+  8      37.291    24.477  -128.913   \cf11 \f1 \b     2\b0 \f0 \cf1      128.913     6.378    28.214     9   \par
+  9     -28.214    -6.378  -128.913   \cf11 \f1 \b     3\b0 \f0 \cf1      128.913    11.044   -40.928    10   \par
+\page
+-----------------------------------------------------------------------------------\line 
+INSTRUCT ver.1.26                 \f1 \b Few-nodes model\b0 \f0                   Page :      .014\line 
+-----------------------------------------------------------------------------------\line 
+\line 
+\line 
+\line 
+\line 
+                     \f1 \b MEMBER ACTIONS - Load combination  2: ULS                                                 \b0 \f0 \par
+                     \fs15 1.400  x  LCase  1: SINGLE VERT LOAD AT APEX\fs20 \par
+                     \fs15 1.600  x  LCase  2: SLS SW STEEL FRAME ONLY\fs20 \par
+\par \f1 \b NODE      M(z)      F(y)      F(x)     MEMBER     F(x)      F(y)      M(z)    NODE        \b0 \f0 \par
+ 10      28.505    24.590  -156.691   \cf11 \f1 \b     4\b0 \f0 \cf1      187.022    15.850    -0.100     7   \par
+\line 
+  1      47.485    29.534   267.761   \cf11 \f1 \b     5\b0 \f0 \cf1     -248.318    17.128    -7.164     2   \par
+  2      26.837    32.587   278.054   \cf11 \f1 \b     6\b0 \f0 \cf1     -254.719    23.416     2.968     3   \par
+  3     -13.837    -3.708   155.188   \cf11 \f1 \b     7\b0 \f0 \cf1     -155.188    20.041    -3.975     4   \par
+  4       3.975   -20.041   155.188   \cf11 \f1 \b     8\b0 \f0 \cf1     -155.188    38.708   -48.037     5   \par
+  5      33.060     7.599   193.249   \cf11 \f1 \b     9\b0 \f0 \cf1     -193.249    -7.599    16.334     6   \par
+  6      -8.000     1.748   197.485   \cf11 \f1 \b    10\b0 \f0 \cf1     -197.485    -1.748    19.362     7   \par
+\line 
+  8      -6.492     0.589  -119.668   \cf11 \f1 \b    11\b0 \f0 \cf1      119.668    -0.589     8.681    11   \par
+ 11      -8.681     0.589  -119.668   \cf11 \f1 \b    12\b0 \f0 \cf1      119.668    -0.589    10.869     3   \par
+\line 
+ 12      -1.611     3.596   -38.566   \cf11 \f1 \b    13\b0 \f0 \cf1       38.566    -3.596    14.977     5   \par
+ 10      11.754     3.596   -38.566   \cf11 \f1 \b    14\b0 \f0 \cf1       38.566    -3.596     1.611    12   \par
+\line 
+  8     -29.808   -19.408    54.581   \cf11 \f1 \b    15\b0 \f0 \cf1      -54.581    19.408   -19.673     2   \par
+\line 
+ 10       0.668    -3.007    -6.568   \cf11 \f1 \b    16\b0 \f0 \cf1        6.568     3.007    -8.334     6   \par
+\line 
+ 13     -58.434   -26.275   133.530   \cf11 \f1 \b    17\b0 \f0 \cf1     -133.530    26.275   -59.805     1   \par
+\line 
+ 14      -0.000    -4.055    90.193   \cf11 \f1 \b    18\b0 \f0 \cf1      -90.193     4.055   -19.262     7   \par
+\page
+-----------------------------------------------------------------------------------\line 
+INSTRUCT ver.1.26                 \f1 \b Few-nodes model\b0 \f0                   Page :      .015\line 
+-----------------------------------------------------------------------------------\line 
+\line 
+\line 
+\line 
+\line 
+                     \f1 \b REACTIONS - Load combination  1: SLS                                                      \b0 \f0 \par
+                     \fs15 1.000  x  LCase  1: SINGLE VERT LOAD AT APEX\fs20 \par
+                     \fs15 1.000  x  LCase  2: SLS SW STEEL FRAME ONLY\fs20 \par
+\par                \f1 \b NODE              F(x)          F(y)          M(z)                                        \b0 \f0 \par
+\line 
+                13              18.7568       93.8177      -41.7292
+\line 
+                14               2.9077       63.5043
+\line 
+\line 
+\line 
+\line 
+                     \f1 \b REACTIONS - Load combination  2: ULS                                                      \b0 \f0 \par
+                     \fs15 1.400  x  LCase  1: SINGLE VERT LOAD AT APEX\fs20 \par
+                     \fs15 1.600  x  LCase  2: SLS SW STEEL FRAME ONLY\fs20 \par
+\par                \f1 \b NODE              F(x)          F(y)          M(z)                                        \b0 \f0 \par
+\line 
+                13              26.2752      133.5301      -58.4336
+\line 
+                14               4.0551       90.1925
+\line }

@@ -1,0 +1,432 @@
+      SUBROUTINE ReadLOADS(LU,NextLine)
+C     ---------------------------------
+C     jw / 30-05-12  draft
+C     jw / 30-05-12  last revised
+
+C     This subroutine action is as set out below, reading from LU.
+C     LU might be a user-defined data file or it might be a scratch
+C     file for temp storage whilst the load case arrays are being
+C     re-ALLOCATEd for larger load data storage per loadcase.
+
+C     set iLCas=1
+C     pre-load NextLine with next LC name
+C     START OUTER LOOP
+C     Load cases
+C        Read LC name from NextLine
+C
+C        set iLLod=1
+C        pre-load NextLine with next load entry
+C        START INNER LOOP
+C        Load entry lines
+C           Read next load entry from NextLine
+C           Read next load entry into NextLine
+C           If NextLine non-blank, increment iLod
+C           If NextLine blank, this loadcase finished, jump out of loop
+C        Cycle inner loop
+C
+C        Read next LC name into NextLine
+C        If NextLine non-blank, increment iLCas
+C        If NextLine is blank, all loadcases finished, jump out of loop
+C     Cycle outer loop
+
+      USE LUnits
+      USE PARAMS
+      USE LOADING
+
+      REAL*4       Pos,Fx,Fy,Mz
+      CHARACTER*1  Axes, LTyp, TDLshp
+      CHARACTER*21 Desc
+      CHARACTER*80 NextLine
+      CHARACTER*16 I2CHAR
+
+      LOGICAL MoreLC, MoreLod, AcceptMoreLod, MoreDOTS, FoundIN, GotData
+
+C     --------------------------
+C     FIRST, COUNT THE LOAD DATA
+C     (if necessary)
+C     --------------------------
+C     How many load cases are there?
+C     What is the largest number of loads in any one loadcase?
+C
+C     This is done only if input is from a user input file.
+C     It is not done if the input comes from a temp file.
+C     Which of these applies depends on whether or not the LOAD array
+C     has been allocated yet.
+
+      IF(.NOT.ALLOCATED(LOADCASE)) THEN
+C         (Yes, it IS necessary to count the Loadcases)
+
+C         Reading loads for the first time.
+C         NLOAD needs to be counted.
+C         The load arrays need to be allocated.
+
+          MaxLod=0
+
+C         COUNT NLCAS
+          iLCas=0
+          MoreLC = .TRUE.
+          DO WHILE(MoreLC)
+              iLCas=iLCas+1
+
+C             Count the number of loads, NLOAD, in ILCAS
+              iLod=0
+              IF(LEN_TRIM(NextLine).NE.0) iLod = 1
+              MoreLod=.FALSE.
+              READ(LU,'(A)') NextLine
+              IF(LEN_TRIM(NextLine).GT.0) MoreLod=.TRUE.
+              DO WHILE(MoreLod)
+                   iLod=iLod+1
+                   READ(LU,'(A)') NextLine
+                   IF(LEN_TRIM(NextLine).EQ.0) MoreLod = .FALSE.
+              END DO!MoreLod
+              MaxLod=Max(MaxLod,iLod)
+
+              READ(LU,'(A)') NextLine
+              IF(LEN_TRIM(NextLine).EQ.0) MoreLC = .FALSE.
+          END DO!(MoreLC)
+
+C         As counted:
+C         - There are iLCas loadcases,
+C         - with up to MaxLod load entries per loadcase.
+
+C         Now allocate the load array sizes for the first time,
+C         allocating slightly more space than counted as needed.
+          NLCAS=iLCas+1
+          NLOAD=MAX(MaxLod+1,6)
+          CALL ALLOC2
+
+C         ..and find the start of the loads again, ready to
+C         read the loads into the arrays.
+          REWIND(LU)
+          MoreLC =
+     +    FoundIN(LU,'LOADS',GotData,NextLine)
+     +       .OR.
+     +    FoundIN(LU,'LOAD DATA',GotData,NextLine)
+     +       .OR.
+     +    FoundIN(LU,'LOADING',GotData,NextLine)
+
+      ELSE
+C         (No, it is NOT necessary to count the Loadcases)
+
+C         Loads must have been read before, and
+C         the program is now just re-reading the loads
+C         after ALLOC2PLUS has reallocated the arrays.
+C         NLOAD is already known.
+C         The load arrays do not need to be allocated.
+
+C         READ(LU,'(A)', END=999) NextLine
+          IF(LEN_TRIM(NextLine).GT.0) MoreLC = .TRUE.
+
+      END IF !(.NOT.ALLOCATED(LOAD))
+
+
+C     --------------------------
+C     NEXT, READ THE LOAD DATA:
+C     --------------------------
+
+C     INITIALISE FOR FIRST LC
+C     Set iLCas to 1.
+C     Set (AcceptMoreLod) to .TRUE.
+C     The first 'NextLine' has already been read from LU.
+C     If (non-blank NextLine) set (MoreLC) to .TRUE.
+      iLCas = 1
+      AcceptMoreLod = .TRUE.
+
+C     ENTER LC LOOP
+C     Start with LC name
+      DO WHILE(MoreLC)
+C        NEXT LOADCASE
+C        MoreLC will have been set to .FALSE. if NextLine blank.
+C        If(MoreLC) then NextLine WILL contain next LC name.
+
+         IF(AcceptMoreLod) LCName(iLCas)=TRIM(NextLine)
+         iLod = 1
+         MoreLod = .TRUE.
+         READ(LU,'(A)', END=999) NextLine
+         IF(LEN_TRIM(NextLine).EQ.0) MoreLOD = .FALSE.
+
+C        ENTER LOAD LOOP
+C        MoreLod will be .FALSE. if NextLine is blank
+C        If(MoreLod) then NextLine WILL contain next load entry
+C>
+         DO WHILE(MoreLOD)
+C           No need to check that no.of loads is within NLOADS limit
+C           because this will have been done when loading the NextLine,
+C           at the end of this loop
+
+C           NEXT LOAD ENTRY IN THE CURRENT LC
+
+C           READ LOAD ENTRY FOM THE NextLine
+            IF(AcceptMoreLod) THEN
+               Pos=0
+               Axes=' '
+               LTyp=' '
+               TDLshp=' '
+               Fx=0.0
+               Fy=0.0
+               Mz=0.0
+               Desc=REPEAT(' ',21)
+
+C              Parse the NextLine to find character positions
+
+               write(6,'(//''NextLine = '',A)') NextLine
+               jPosF=SCAN(NextLine,'-123456789') !First char
+
+               IF(NextLine(jPosF:jPosF) .NE. '-') THEN
+                  jPosL=INDEX(NextLine,',')-1 !LastChar
+                  write(6,'(''jPos = '',A)')
+     +            TRIM(I2CHAR(jPosF,iDUM))//':'//I2CHAR(jPosL,iDUM)
+
+                  jAxes=jPosL+1+
+     +            SCAN(NextLine(jPosL+2:LEN_TRIM(NextLine)),'GgLl')
+                  READ(NextLine(jAxes:jAxes),'(A)') Axes
+                  write(6,'(''Axes = '',A)') Axes
+
+                  jLTyp=jAxes+1+
+     +           SCAN(NextLine(jAxes+2:LEN_TRIM(NextLine)),
+     +                'NnPpUuTtDdSs')
+                  READ(NextLine(jLTyp:jLTyp),'(A)') LTyp
+                  write(6,'(''LTyp = '',A)') LTyp
+
+                  IF(LTyp.EQ.'T' .OR. LTyp.EQ.'t') THEN
+                      jTDLshp=SCAN(NextLine(jPosF:jPosL),'LlIiMmCcJjRr')
+                      IF(jTDLshp.GT.0) THEN
+                          jPosL = jTDLshp-1
+                         write(6,'(''jPos = '',A,'' (modified)'')')
+     +           TRIM(I2CHAR(jPosF,iDUM))//':'//TRIM(I2CHAR(jPosL,iDUM))
+                          READ(NextLine(jTDLshp:jTDLshp),'(A)') TDLshp
+                          IF(SCAN(TDLshp,'LlIi').GT.0) TDLshp='I'
+                          IF(SCAN(TDLshp,'RrJj').GT.0) TDLshp='J'
+                          IF(SCAN(TDLshp,'Mm ').GT.0)  TDLshp='m'
+                          write(6,'(''TDLshp = '',A)') TDLshp
+                      END IF !(jTDLshp.GT.0)
+                  END IF !(jTDLshp.GT.0)
+
+                  jActnsF=jLTyp+2 !First char posn
+                  jActnsL=INDEX(NextLine,',',BACK=.TRUE.)-1
+                  jDescF=jActnsL+2
+                  jDescL=LEN_TRIM(NextLine)
+
+                  READ(NextLine(jActnsF:jActnsL),*) Fx, Fy, Mz
+                  write(6,'(''[Fx, Fy, Mz] = ['',3F8.3,'']'')') Fx,Fy,Mz
+
+                  READ(NextLine(jDescF:jDescL),'(A)') Desc
+                  write(6,'(''Desc = '',A)') Desc
+
+               ELSE
+                  jPosL=LEN_TRIM(NextLine)
+                  jAxes=0
+                  jLTyp=0
+                  jTDLshp=0
+                  jActnsF=0
+                  jActnsL=0
+                  jDescF=0
+                  jDescL=0
+               END IF
+
+
+               IF(INDEX(NextLine(jPosF:jPosL),'.').EQ.0) THEN
+
+C                 POS IS AN INTEGER
+C                 -----------------
+                  write(6,'(''NextLine('',I2,'':'',I2,'') = '',A)')
+     +                      jPosF,jPosL,NextLine(jPosF:jPosL)
+                  READ(NextLine(jPosF:jPosL),*) iPos
+                  Pos=FLOAT(iPos)
+                  write(6,'(''iPos = '',i2)') iPos
+               ELSE
+
+C                 POS IS A REAL NUMBER
+C                 --------------------
+                  IF(TDLshp.NE.' ')
+     +            CALL BailOut('In loadcase '//
+     +            TRIM(I2Char(ILCAS,iDum))//', '//
+     +            'a load type T (triangular distrinbuted load) has '//
+     +            'been entered for member '//TRIM(I2CHAR(iPos,iDum))//
+     +            ', but this load type has has to be applied along '//
+     +            'the whole member length.  '//
+     +            'Either don''t use load type T or don''t enter '//
+     +            'a decimal proportion along that member number.',
+     +            'YES','YES')
+                  READ(NextLine(jPosF:jPosL),*) Pos
+                  write(6,'(''Pos = '',F8.3)') Pos
+
+            END IF !(INDEX(NextLine(jPosF:jPosL),'.').EQ.0)
+                   !(test for INTEGER or REAL value in POS)
+
+               LOADCASE(iLCas,iLod)%Pos    = Pos
+               LOADCASE(iLCas,iLod)%Axes   = Axes
+               LOADCASE(iLCas,iLod)%LTyp   = LTyp
+               LOADCASE(iLCas,iLod)%TDLshp = TDLshp
+               LOADCASE(iLCas,iLod)%Fx     = Fx
+               LOADCASE(iLCas,iLod)%Fy     = Fy
+               LOADCASE(iLCas,iLod)%Mz     = Mz
+               LOADCASE(iLCas,iLod)%Desc   = Desc
+            END IF!(AcceptMoreLod)
+
+C           ANY MORE LOAD ENTRIES FOR THIS LC?
+
+C           READ THE NEXT LOAD ENTRY INTO NextLine
+C           If non-blank line then check that there's room for it
+C           If it's a blank line then that's the end of this LC
+            READ(LU,'(A)', END=999) NextLine
+            IF(LEN_TRIM(NextLine).NE.0) THEN
+               iLod=iLod+1
+               IF(iLod.EQ.NLOAD) THEN
+                  CALL Alloc2Plus('NLOAD',25)!More NLOADs per loadcase
+C                 -opens a temp file
+C                 -Saves all stored LCNames and LOADS to temp file
+C                 -DEALLOCATES LOADS and LCNames
+C                 -ALLOCATES LOADS to larger sizes
+C                 -Retrieves stored LCName & LOADS from temp file
+C                 -Closes and deletes the temp file
+               END IF!(iLod.EQ.NLOAD)
+            ELSE !Blank NextLine
+               MoreLod =.FALSE. !No more loads in this LC
+            END IF !LEN_TRIM(NextLine).NE.0
+         END DO !While(MoreLOD)
+
+C        ANY MORE LOAD CASES?
+C
+C        READ THE NEXT LOADCASE NAME INTO THE NextLine
+C        If non-blank line then check that there's room for it
+C        If it's a blank line then that's the end of all LCases
+         READ(LU,'(A)', END=999) NextLine
+         IF(LEN_TRIM(NextLine).GT.0) THEN !non-blank line
+            iLCas = iLCas+1
+C           Check no.of LCases is within NLCAS limit
+C           If too many then stay in the loop so that the program
+C           can get to the end of the LC data but set (AcceptMoreLod)
+C           to .FALSE. so the program won't read data from the NextLine
+            IF(iLCas.GT.NLCAS) THEN
+C              Strip all '.' from LC name cos used as
+C              end marker in subroutine BailOUT
+               MoreDots=.TRUE.
+               DO jDot=1,LEN_TRIM(NextLine)
+                  IF(NextLine(jDot:jDot).EQ.'.') NextLine(jDot:jDot)=','
+               END DO
+               CALL BailOUT
+     +         ('ERROR|'//
+     +         'More load cases than the specified limit.|'//
+     +         'Load case(s) ['//TRIM(NextLine)//'] onwards '//
+     +         'will not be used.$' ,
+     +         'OPTIONS','YES')
+               AcceptMoreLod = .FALSE.
+            END IF !iLCAS.GT.NLCAS
+         ELSE !blank line
+            MoreLC = .FALSE.
+         END IF !(non-blank line)
+
+      END DO !while MoreLC
+
+      NLCAS = NLCAS-1
+      RETURN
+
+
+999   CALL BailOUT
+     +      ('END OF FILE ERROR|'//
+     +       'The data file needs two blank lines at the end to|'//
+     +       'tell the program it has reached the end of the data.$' ,
+     +       'OPTIONS','YES')
+
+      END
+
+
+
+
+      SUBROUTINE SaveLOADS(LU)
+C     ------------------------
+C     jw / 30-05-12  draft
+C     jw / 30-05-12  last revised
+
+C     Save all load data to LU1
+
+      USE PARAMS
+      USE LOADING
+
+      REAL*4       Pos
+      CHARACTER*16 R2CHAR
+      CHARACTER*30 LCNam
+      CHARACTER*99 buffer
+
+      LOGICAL MoreLC, MoreLod
+
+      iLCas = 1
+      MoreLC = .TRUE.
+      LCNam = LCName(iLCas)
+C     LC LOOP
+      DO WHILE(MoreLC)
+
+C        LC NAME
+         IF(LEN_TRIM(LCNam).EQ.0) LCNam = '--'
+         Write(LU,'(A)') TRIM(LCNam)
+
+         iLod = 1
+         MoreLOD = .TRUE.
+         Pos = LOADCASE(ILCas,iLod)%Pos
+C        LOAD LOOP
+         DO WHILE(MoreLOD)
+
+            IF(ABS(Pos-NINT(Pos)).LT. 2*TINY(Pos) ) THEN
+               WRITE(buffer,'(I8)') NINT(POS)
+               IF(LEN_TRIM(LOADCASE(ILCas,iLod)%TDLshp).GT.0)
+     +         buffer=trim(buffer)//trim(LOADCASE(iLCas,iLod)%TDLshp)
+            ELSE
+               buffer=R2CHAR(POS,idum,'F16.6 ')
+            END IF
+
+            buffer = TRIM(ADJUSTL(buffer))
+
+            IF(.NOT.
+     +        ((buffer(1:1).EQ.'-')
+     +        .AND.
+     _        (LOADCASE(ILCas,iLod)%Fx .EQ. 0.0)
+     +        .AND.
+     _        (LOADCASE(ILCas,iLod)%Fy .EQ. 0.0)
+     +        .AND.
+     _        (LOADCASE(ILCas,iLod)%Mz .EQ. 0.0)) ) THEN
+
+              buffer =
+     +        TRIM(buffer)//','//
+     +        LOADCASE(ILCas,iLod)%Axes//','//
+     +        LOADCASE(ILCas,iLod)%LTyp//','
+
+              buffer = trim(buffer)//
+     +        TRIM(R2CHAR(LOADCASE(ILCas,iLod)%Fx,iDum,'F16.6 '))//','//
+     +        TRIM(R2CHAR(LOADCASE(ILCas,iLod)%Fy,iDum,'F16.6 '))//','//
+     +        TRIM(R2CHAR(LOADCASE(ILCas,iLod)%Mz,iDum,'F16.6 '))//','
+
+              buffer = trim(buffer)//trim(LOADCASE(iLCas,iLod)%Desc)
+            END IF
+
+            write(LU,'(A)') trim(buffer)
+
+            iLod=iLod+1
+            Pos = LOADCASE(ILCas,iLod)%Pos
+
+            IF(Pos.NE.0) CYCLE
+
+C           Pos=0 means there are no more loads in this LC
+            MoreLod = .FALSE.
+            WRITE(LU,'(A)') '' !1st blank line ends this LC
+
+         END DO !while MoreLod
+
+         iLCas = iLCas+1
+         LCNam = LCName(iLCas)
+
+C        IF(LEN_TRIM(LCNam(1:6)).GT.0) CYCLE
+         IF(iLCas.LE.NLCAS) CYCLE
+
+C        LEN=0 means there are no more load cases
+         MoreLC = .FALSE.
+         WRITE(LU,'(/)') !2nd blank line means the end of all LCs
+
+      END DO !while MoreLC
+
+      RETURN
+      END
+
+
+
+

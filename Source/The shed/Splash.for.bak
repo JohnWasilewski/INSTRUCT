@@ -1,0 +1,225 @@
+      SUBROUTINE SPLASH
+C     -----------------
+C     jw / 29-12-13  draft
+C     jw / 29-12-13  last revised
+
+C     Splash screen in diagram pane
+
+      USE dislin
+      USE WINSTUFF
+      USE TITLES
+      USE PARAMS
+      USE MATERIALS
+      USE PROPERTIES
+      USE NODES
+      USE MEMBERS
+      USE Restraints
+      USE LOADING
+      USE DRW
+
+
+      INTEGER ML, MT, LH, LY, LS
+      CHARACTER I2CHAR*16
+
+C     Open the diagram pane
+C     ---------------------
+C     Use Pane 3 for this purpose
+
+      CALL SWGATT(idDRW,'ACTIVE','STATUS')
+      CALL REAWGT
+
+      CALL setxid(idDRW,'WIDGET')
+      CALL metafl('CONS')   !Graphic page goes to screen
+
+      CALL disini
+
+      CALL errmod('ALL', 'OFF')
+      CALL erase  !Clear the graphics screen
+
+      h0    = FLOAT(Pan3H)/1000.0
+      X01   = 101.0*481.0/Pan3W         !General vert+horiz scale factor
+      X02   = 0.79                      !Line space multiplier
+      h1    = h0*X01
+      OVS   = 1.06  !Each char's vertical overshoot into the next line
+
+      LhN = NINT(1.0*h1)                    !Line height (normal)
+      LhH = NINT(1.85*h1)                   !Line height (HUGE)
+      LhB = NINT(1.25*h1)                    !Line height (BIG)
+      LhS = NINT(0.97*h1)                   !Line height (Small)
+      LhT = NINT(0.92*h1)                   !Line height (Tiny)
+      LH  = LhN				                !Current line height setting
+      LS  = NINT(h1*X02)                    !Line space leading
+      ML  = NINT(0.5*h1)                    !L margin
+      MT  = NINT(1.00*h1)                   !T margin
+      MB  = NINT(0.98*h1)                   !B margin
+      LX  = ML                              !Position(x)
+      LY  = MT                              !Position(y)
+
+C     CALL TTFONT('Arial Bold')
+C     CALL TTFONT('Times New Roman')
+C     ------------------------------
+      CALL WINFNT('Arial Bold')
+      CALL SHDCHA
+      CALL CHASPC(-0.04)
+      CALL COLOR('BLUE')
+      LH = LhH !Huge
+      CALL HEIGHT(LH)
+C     ------------------------------
+        CALL MESSAG('Program INSTRUCT',LX,LY)
+        LY = LY+NINT(FLOAT(LH)*OVS+1.8*FLOAT(LS))
+
+
+C     ------------------------------
+      LH = LhB !Big
+      CALL HEIGHT(LH)
+C     ------------------------------
+        CALL MESSAG('Structural analysis of plane frames',LX,LY)
+        LY = LY+NINT(FLOAT(LH)*OVS+2.4*FLOAT(LS))
+
+C     ------------------------------
+      CALL WINFNT('Times New Roman')
+      CALL SHDCHA
+      CALL CHASPC(-0.06)
+      LH = LhS  !Small
+      CALL HEIGHT(LH)
+C     ------------------------------
+        CALL MESSAG('Single self-contained executable program file - '//
+     +  'nothing to ''install''.'//
+     +  '    ('//TRIM(I2CHAR(Pan3W,idum))//'x'//
+     +  TRIM(I2CHAR(Pan3H,idum))//')',
+     +  LX,LY)
+        LY = LY+NINT(FLOAT(LH)*OVS)+LS
+
+        CALL MESSAG('Version '//VERS4//' ('//PDAT9//') - '//
+     +  'by John Wasilewski, civil engineer, London.',LX,LY)
+        LY = LY+NINT(FLOAT(LH)*OVS+2.4*FLOAT(LS))
+
+C     ------------------------------
+      CALL COLOR('FORE')
+      LH = LhN  !Normal
+      CALL HEIGHT(LH)
+      CALL CHASPC(-0.04)
+C     ------------------------------
+      	CALL MESSAG
+     +  ('Solves bending moments, axial and shear forces '//
+     +  'at member ends of linear elastic rigid-joint ',LX,LY)
+	 LY = LY+NINT(FLOAT(LH)*OVS)+LS
+
+	CALL MESSAG
+     +  ('skeletal frames.  Limits numbers of nodes, '//
+     +  'members, materials, member types, springs ',LX,LY)
+        LY = LY+NINT(FLOAT(LH)*OVS)+LS
+
+	CALL MESSAG
+     +  ('and loads only by available memory and disk '//
+     +  'storage.  Compacts stiffness equations by',LX,LY)
+        LY = LY+NINT(FLOAT(LH)*OVS)+LS
+
+	CALL MESSAG
+     +  ('the highly efficient ''skyline'' storage method, '//
+     +  'enabling very large problem solutions.',LX,LY)
+        LY = LY+NINT(FLOAT(LH)*OVS)+2*LS
+
+	CALL MESSAG
+     +  ('Use any consistent units for dimensions, forces '//
+     +  'and moments.  Use the RH screw rule for',LX,LY)
+	LY = LY+NINT(FLOAT(LH)*OVS)+LS
+	CALL MESSAG
+     +  ('axes & signs. Support nodes rigidly, '//
+     +  'with optional prescribed displacements (support ',LX,LY)
+	LY = LY+NINT(FLOAT(LH)*OVS)+LS
+
+	CALL MESSAG
+     +  ('settlements), or on springs, in the global '//
+     +  'X, Y (translation) and/or Z (rotation) directions.  ',LX,LY)
+        LY = LY+NINT(FLOAT(LH)*OVS)+2*LS
+
+	CALL MESSAG
+     +  ('Released member-ends can slide along local x '//
+     +  'and/or y axes, and/or rotate about z. ',LX,LY)
+	LY = LY+NINT(FLOAT(LH)*OVS)+2*LS
+
+	CALL MESSAG
+     +  ('Use nodal or member point loads, UDLs, triangularly '//
+     +  'distributed loads (''TDLs''), ',LX,LY)
+	LY = LY+NINT(FLOAT(LH)*OVS)+LS
+
+	CALL MESSAG
+     +  ('densities (self weight) or support settlements.',LX,LY)
+	LY = LY+NINT(FLOAT(LH)*OVS)+2*LS
+
+	CALL MESSAG
+     +  ('Stiffness equations don''t currently '//
+     +  'take shear displacement into account.  ',LX,LY)
+	LY = LY+NINT(FLOAT(LH)*OVS)+LS
+
+	CALL MESSAG
+     +  ('This matters only with unusually short members or '//
+     +  'very high shear stiffnesses.',LX,LY)
+	LY = LY+NINT(FLOAT(LH)*OVS)+2*LS
+	CALL MESSAG
+     +  ('Checks all nodal force & moment equilibrium. Checks '//
+     +  'reactions against total applied loads.',LX,LY)
+	LY = LY+NINT(FLOAT(LH)*OVS)+LS
+
+	CALL MESSAG
+     +  ('Lists all results on screen, with structure diagram. '//
+     +  'Saves to M$Word-readable ''.RTF '' files.',LX,LY)
+	LY = LY+NINT(FLOAT(LH)*OVS)+3*LS
+
+C     ------------------------------
+      CALL WINFNT('Arial Bold')
+C     LH = LhB  !Big
+C     CALL HEIGHT(LH)
+      CALL COLOR('RED')
+C     ------------------------------
+        CALL MESSAG
+     +  ('PLEASE SEE THE CONTEXT-RELATED ''HELP'' '//
+     +  'AT EACH DATA ENTRY STAGE', LX,LY)
+	LY = LY+NINT(FLOAT(LH)*OVS)+3*LS
+
+C     ------------------------------
+      CALL WINFNT('Times New Roman')
+      CALL CHASPC(-0.04)
+      CALL SHDCHA
+      CALL COLOR('FORE')
+      LH = LhS  !Small
+      CALL HEIGHT(LH)
+C     ------------------------------
+        CALL MESSAG
+     +  ('Please report errors, difficulties and requests to the '//
+     +  'program author.',LX,LY)
+	LY = LY+NINT(FLOAT(LH)*OVS)+2*LS
+
+        CALL MESSAG
+     +  ('John@Wasilewski.co.uk',LX,LY)
+	LY = LY+NINT(FLOAT(LH)*OVS)+LS
+
+        CALL MESSAG
+     +  ('  020-7611-0514',LX,LY)
+	LY = LY+NINT(FLOAT(LH)*OVS)+LS
+
+        CALL MESSAG
+     +  ('  07900-891-107',LX,LY)
+	LY = LY+NINT(FLOAT(LH)*OVS)+3*LS
+
+C     ------------------------------
+      LH = LhT
+      CALL HEIGHT(LH)
+C     ------------------------------
+        CALL MESSAG
+     +  ('Uses the DISLIN graphics library by Helmut Michels, (c) '//
+     +  'Max Planck Institute for Solar System Research.',LX,LY)
+	LY = LY+NINT(FLOAT(LH)*OVS*0.66)+LS
+
+        CALL MESSAG
+     +  ('Non-commercial use only.', LX,LY)
+	LY = LY+NINT(FLOAT(LH)*OVS)+LS
+
+
+      CALL DISFIN()
+
+      RETURN
+      END
+
+

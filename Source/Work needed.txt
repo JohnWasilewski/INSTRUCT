@@ -1,0 +1,148 @@
+TO-DO LIST
+
+
+-----------------------
+NOT DONE or NOT CHECKED
+-----------------------
+
+STRUCTURE
+---------
+
+Why have I had to add initialising code for any increased part of a
+structure, at about lines 482 onwards in STORPAR.for, when I already
+have initialising code for the whole of the structure, in ALLOC1.for?
+
+Allow for shear displacement in stiffness matrix .
+
+SAVE-AS creates a new input file but not a corresponding new .RTF file.
+
+
+DRAWING
+-------
+Uni-directional pin is being drawn as a doughnut without a slider.
+Uni-directional support is being drawn as a pin without a slider.
+
+Must finally fix the .RTF diagram vector directions to enable other
+wordprocessors, as well as M$Word, to display the diagram correctly.
+
+
+LOADS
+-----
+Code needed to recognise eg 15i, 15m, 15j as member point load
+positions at one end or the centre of a member.
+
+Bailout option to continue must not continue the analysis
+if the Bailout was caused by a serious data error.
+
+After editing load combinations, the analyse menu-selection
+becomes ghosted.
+
+COMBINATIONS
+------------
+Adding a new combination seems to add two of them, not one.
+
+After runnning an analysis, Selecting STRUCTURE>Member properties then
+CANCEL, or STRUCTURE>OtherStuff then CANCEL, triggers a SWGATT
+"Not allowed ID" error.  This does not happen before analysing.
+
+Either adding or reading combinations causes a crash (I forget which).
+
+------------------------------------------------------------------------
+
+----
+DONE
+----
+
+After editing titles then selecting edit-nodes, CANCELLing edit-nodes
+triggers an SWGATT 'not-allowed widget ID' error.  Going into edit-nodes
+as a first action seems not to cause this error.
+
+After a completed analysis, editing node coords then selecting CANCEL
+loses all the restraints.  Selecting SAVE preserves them.
+
+Editing restraints in an existing model is causing restraints
+to be miscounted.  The program is entering RCODE at STRUCT.for line 41,
+with correct data stored unencoded in KFIXD, and yet RCODE is then
+mis-counting (iei counting short) the no. of restraints.
+
+After running an analysis, entering Structure>Nodes, Structure>Member
+connections, etc triggers an SWGATT error, 'not-allowed widget ID'.
+
+Reading EOF causes a crash.
+Reading EOF causes a crash.
+
+SAVE-AS after running an analysis had a miniscule font.
+Thought to have been corrected.
+
+MEMB(iMemb)%StiffsStored = .FALSE. is now set whenever
+changing a member.
+
+MEMB(iMembs)%StiffsStored = .FALSE. is now set for all members
+framing in to a node whenever changing that node.
+
+SAVEing an incomplete structure was saving it with some text
+strings uninitialised, and this was preventing re-reading.
+
+After increasing an already-entered structure size (more members),
+clicking 'Accept' crashed the program.
+
+Combs 1 and 2 giving same results.
+
+Surplus (empty) load combinations are being listed.
+
+Reading more than the first few (TWO ?) load combinations from a file
+throws a "more combs than the specified limit" error.
+
+Reading more than the first few load combinations from a file
+throws a "more combs than the specified limit" error.
+
+SAVing a structure might be writing garbage at the end of combinations.
+
+Selecting menu Loading > Loadcases causes a crash
+with error: SWGATT >>>>> Not allowed Widget ID
+Button to add more blank lines to loads table causes a crash.
+
+Part-way through moving all HELP menus to HELP.for .
+Selecting NODES data-entry triggers "Not allowed parent ID" error.
+
+Debugger crashes to SIGSEGV error on a filename dialog request
+(only in 64-bit version).
+
+In LOADS, 'Help' pulls up the "Use the FILE menu.." help message
+instead of the Loading help message.
+LOAD input has the 'open file' HELP display.
+
+When load type is "u" instead of "U", this is being correctly displayed
+as load type "U"DL but the analysis results are completely wrong.
+
+Entering load type 'S' in the on-screen table gives an unrecognised
+load type (reading from a file is OK though).
+
+LoadTypS line 101 error in msg display when deflection added to
+an unsupported node
+
+The member connections table is listed wrongly
+(member type and 'J'-end missing).
+See LIST.for around lines 342-358.
+
+When creating a new structure and when the restraints have
+been entered in the Nodes table, restraints are being counted short.
+
+After completing an analysis, the restraints are lost.
+
+Code corrected for member-end releases.
+
+Member-end releases are being shown a little too far along the members.
+
+SAVE-STRUCTURE was crashing at RWInput line 437 when member-end pins
+have been added.  Problem is possibly with the parameter, R$, that is
+being passed to aIF().  No - aIF needed a dimensioned declaration.
+
+Editing the structure size, adding a member, then, after
+'MEMBER CONNECTIONS incomplete, Continue?', clicking Y triggers a
+succession of errors in GWGTBS, GWGTBF and GWGTBI, >>> all declaring,
+"Widget is not a Table Widget!".
+
+Reading EOF causes a crash.
+------------------------------------------------------------------------
+
