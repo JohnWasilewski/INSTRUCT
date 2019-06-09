@@ -1,0 +1,294 @@
+{
+  "Root":{
+    "Folders":[{
+        "Folders":[],
+        "Name":"-Include files",
+        "Files":[]
+      },{
+        "Folders":[],
+        "Name":"+Libraries",
+        "Files":[]
+      },{
+        "Folders":[],
+        "Name":"+Module object files",
+        "Files":[]
+      },{
+        "Folders":[],
+        "Name":"+Module source files",
+        "Files":[{
+            "filename":"../Source/MODULES/mDRW.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/MODULES/mLoading.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/MODULES/mM.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/MODULES/mMaterials.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/MODULES/mMEMBS.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/MODULES/mNODES.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/MODULES/mParams.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/MODULES/mProps.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/MODULES/mRestr.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/MODULES/mResults.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/MODULES/mWinSTUFF.for",
+            "enabled":"1"
+          }]
+      },{
+        "Folders":[],
+        "Name":"+Program source files",
+        "Files":[{
+            "filename":"../Source/addlod.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/addmem.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/addspr.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/Alloc.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/BailOut.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/ClearAllData.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/Debug.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/Decifr.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/Divide.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/dotty.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/Draw.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/FileHandler.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/force.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/getmem.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/GetRESTR.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/HELP.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/INSTRUCT.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/List.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/LoadTypN.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/LoadTypP.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/LoadTypS.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/LoadTypT.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/LoadTypU.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/LoadVec.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/MemRel.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/memstf.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/Output1Lcases.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/Output2Lcombs.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/ParsePath.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/rcode.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/rCombs.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/ReadMATLS.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/ReadMEMBS.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/ReadNODES.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/ReadPARAMS.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/ReadPROPS.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/ReadRESTR.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/ReadSPRI.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/rLoads.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/rMatls.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/rMembs.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/rNodes.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/rotate.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/rParams.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/rProps.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/rRestr.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/rTitles.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/RWCombs.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/RWInput.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/RWLoads.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/skydia.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/solve.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/Splash.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/Spreac.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/sterm.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/stiff.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/Struct.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/utility.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/WinINIT.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/WinMenus.for",
+            "enabled":"1"
+          },{
+            "filename":"../Source/WinSCR.for",
+            "enabled":"1"
+          }]
+      }],
+    "Name":"+Instruct64 (Instruct64)",
+    "Files":[]
+  },
+  "Name":"Instruct64 (Instruct64)",
+  "Options":{
+    "Compiler Options":{
+      "Fortran Flags":"-fdollar-ok",
+      "Link Flags":"-lioLibWin64 -ldislin -lXt -lX11 -s",
+      "C Flags":""
+    },
+    "Architecture":0,
+    "Type":0,
+    "Revision":2,
+    "Windows GUI":1,
+    "File Options":{
+      "Library Directories":["Default Add-On Directory","/usr/local/dislin","../../IOLibWin/Lin.SF","Default Library Directory","/usr/local/dislin/gf/real64","/usr/local/dislin/gf","../../IOlibWin/Lin.SF","../../IOlibWin/Lin.SF"],
+      "Build Directory":"./build64",
+      "Module Directory":"./modules64",
+      "Include Directories":["Default Add-On Include Directory","/usr/local/dislin/gf","../../IOLibWin/Lin.SF/modules64","Default Include Directory","../../IOlibWin/Lin.SF/modules64"]
+    },
+    "Target":"Instruct64",
+    "Fortran Options":{
+      "Use C Preprocessor":"true",
+      "Runtime Diagnostics":"false",
+      "Cray Pointers":"false",
+      "Enable OpenMP":"false",
+      "Enable Coarrays":"false",
+      "Default Double for Real":"false"
+    },
+    "Code Generation Options":{
+      "CPU Specific":"false",
+      "Processor":"generic",
+      "Aggressive Loops":"false",
+      "Debugging":"true",
+      "Optimization Mode":0,
+      "Profiling":"true"
+    },
+    "Build Dependencies":1,
+    "Launch Options":{
+      "Working Directory":"",
+      "Keep Console":"false",
+      "External Console":"false",
+      "Command Line Arguments":"",
+      "Build Before Launch":"false"
+    },
+    "Build Options":{
+      "Makefile":"Makefile64",
+      "Auto Makefile":"true"
+    },
+    "Linker Options":{
+      "Static Linking Mode":1,
+      "Link LAPACK":0
+    }
+  }
+}
