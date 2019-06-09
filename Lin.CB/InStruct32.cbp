@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="InStruct32CB" />
+		<Option pch_mode="2" />
+		<Option compiler="gfortran" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/InStruct32cb" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gfortran" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/InStruct32cb" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gfortran" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="Source/Alloc.for" />
+		<Unit filename="Source/BailOut.for" />
+		<Unit filename="Source/ClearAllData.for" />
+		<Unit filename="Source/Debug.for" />
+		<Unit filename="Source/Decifr.for" />
+		<Unit filename="Source/Divide.for" />
+		<Unit filename="Source/Draw.for" />
+		<Unit filename="Source/FileHandler.for" />
+		<Unit filename="Source/GetRESTR.for" />
+		<Unit filename="Source/INSTRUCT.for" />
+		<Unit filename="Source/List.for" />
+		<Unit filename="Source/LoadTypN.for" />
+		<Unit filename="Source/LoadTypP.for" />
+		<Unit filename="Source/LoadTypS.for" />
+		<Unit filename="Source/LoadTypT.for" />
+		<Unit filename="Source/LoadTypU.for" />
+		<Unit filename="Source/LoadVec.for" />
+		<Unit filename="Source/MODULES/mDRW.for" />
+		<Unit filename="Source/MODULES/mLoading.for" />
+		<Unit filename="Source/MODULES/mM.for" />
+		<Unit filename="Source/MODULES/mMEMBS.for" />
+		<Unit filename="Source/MODULES/mMaterials.for" />
+		<Unit filename="Source/MODULES/mNODES.for" />
+		<Unit filename="Source/MODULES/mParams.for" />
+		<Unit filename="Source/MODULES/mProps.for" />
+		<Unit filename="Source/MODULES/mRestr.for" />
+		<Unit filename="Source/MODULES/mResults.for" />
+		<Unit filename="Source/MODULES/mWinSTUFF.for" />
+		<Unit filename="Source/MemRel.for" />
+		<Unit filename="Source/Output1Lcases.for" />
+		<Unit filename="Source/Output2Lcombs.for" />
+		<Unit filename="Source/ParsePath.for" />
+		<Unit filename="Source/RWCombs.for" />
+		<Unit filename="Source/RWInput.for" />
+		<Unit filename="Source/RWLoads.dbg" />
+		<Unit filename="Source/RWLoads.for" />
+		<Unit filename="Source/ReadMATLS.for" />
+		<Unit filename="Source/ReadMEMBS.for" />
+		<Unit filename="Source/ReadNODES.for" />
+		<Unit filename="Source/ReadPARAMS.for" />
+		<Unit filename="Source/ReadPROPS.for" />
+		<Unit filename="Source/ReadRESTR.for" />
+		<Unit filename="Source/ReadSPRI.for" />
+		<Unit filename="Source/Splash.for" />
+		<Unit filename="Source/Spreac.for" />
+		<Unit filename="Source/Struct.for" />
+		<Unit filename="Source/WinINIT.for" />
+		<Unit filename="Source/WinMenus.for" />
+		<Unit filename="Source/WinSCR.for" />
+		<Unit filename="Source/addlod.for" />
+		<Unit filename="Source/addmem.for" />
+		<Unit filename="Source/addspr.for" />
+		<Unit filename="Source/dotty.for" />
+		<Unit filename="Source/force.for" />
+		<Unit filename="Source/getmem.for" />
+		<Unit filename="Source/memstf.for" />
+		<Unit filename="Source/rCombs.for" />
+		<Unit filename="Source/rLoads.HM.for" />
+		<Unit filename="Source/rLoads.for" />
+		<Unit filename="Source/rMatls.for" />
+		<Unit filename="Source/rMembs.for" />
+		<Unit filename="Source/rNodes.for" />
+		<Unit filename="Source/rParams.for" />
+		<Unit filename="Source/rProps.for" />
+		<Unit filename="Source/rRestr.for" />
+		<Unit filename="Source/rTitles.for" />
+		<Unit filename="Source/rcode.for" />
+		<Unit filename="Source/rotate.for" />
+		<Unit filename="Source/skydia.for" />
+		<Unit filename="Source/solve.for" />
+		<Unit filename="Source/sterm.for" />
+		<Unit filename="Source/stiff.for" />
+		<Unit filename="Source/utility.for" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,147 @@
+# depslib dependency file v1.0
+1468778917 source:/home/pi/DEV/InStruct/main.f95
+
+1407722700 source:/home/pi/DEV/InStruct/Source/MODULES/mDRW.for
+
+1417066972 source:/home/pi/DEV/InStruct/Source/MODULES/mLoading.for
+
+1417066736 source:/home/pi/DEV/InStruct/Source/MODULES/mM.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/MODULES/mMaterials.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/MODULES/mMEMBS.for
+
+1411457412 source:/home/pi/DEV/InStruct/Source/MODULES/mNODES.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/MODULES/mParams.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/MODULES/mProps.for
+
+1417068468 source:/home/pi/DEV/InStruct/Source/MODULES/mRestr.for
+
+1411457366 source:/home/pi/DEV/InStruct/Source/MODULES/mResults.for
+
+1467154894 source:/home/pi/DEV/InStruct/Source/MODULES/mWinSTUFF.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/addlod.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/addmem.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/addspr.for
+
+1468782402 source:/home/pi/DEV/InStruct/Source/Alloc.for
+
+1415724856 source:/home/pi/DEV/InStruct/Source/BailOut.for
+
+1414686346 source:/home/pi/DEV/InStruct/Source/ClearAllData.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/Debug.for
+
+1417229892 source:/home/pi/DEV/InStruct/Source/Decifr.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/Divide.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/dotty.for
+
+1417060076 source:/home/pi/DEV/InStruct/Source/Draw.for
+
+1465862894 source:/home/pi/DEV/InStruct/Source/FileHandler.for
+
+1417066396 source:/home/pi/DEV/InStruct/Source/force.for
+
+1417066970 source:/home/pi/DEV/InStruct/Source/getmem.for
+
+1417066444 source:/home/pi/DEV/InStruct/Source/GetRESTR.for
+
+1417491576 source:/home/pi/DEV/InStruct/Source/INSTRUCT.for
+
+1417242750 source:/home/pi/DEV/InStruct/Source/List.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/LoadTypN.for
+
+1417069092 source:/home/pi/DEV/InStruct/Source/LoadTypP.for
+
+1416775890 source:/home/pi/DEV/InStruct/Source/LoadTypS.for
+
+1417069392 source:/home/pi/DEV/InStruct/Source/LoadTypT.for
+
+1416927236 source:/home/pi/DEV/InStruct/Source/LoadTypU.for
+
+1422775766 source:/home/pi/DEV/InStruct/Source/LoadVec.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/MemRel.for
+
+1417069522 source:/home/pi/DEV/InStruct/Source/memstf.for
+
+1417104956 source:/home/pi/DEV/InStruct/Source/Output1Lcases.for
+
+1417073026 source:/home/pi/DEV/InStruct/Source/Output2Lcombs.for
+
+1415206666 source:/home/pi/DEV/InStruct/Source/ParsePath.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/rcode.for
+
+1417069972 source:/home/pi/DEV/InStruct/Source/rCombs.for
+
+1415843036 source:/home/pi/DEV/InStruct/Source/ReadMATLS.for
+
+1417070896 source:/home/pi/DEV/InStruct/Source/ReadMEMBS.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/ReadNODES.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/ReadPARAMS.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/ReadPROPS.for
+
+1418665274 source:/home/pi/DEV/InStruct/Source/ReadRESTR.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/ReadSPRI.for
+
+1417219626 source:/home/pi/DEV/InStruct/Source/rLoads.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/rLoads.HM.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/rMatls.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/rMembs.for
+
+1415158502 source:/home/pi/DEV/InStruct/Source/rNodes.for
+
+1417070898 source:/home/pi/DEV/InStruct/Source/rotate.for
+
+1417070898 source:/home/pi/DEV/InStruct/Source/rParams.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/rProps.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/rRestr.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/rTitles.for
+
+1427526990 source:/home/pi/DEV/InStruct/Source/RWCombs.for
+
+1417070900 source:/home/pi/DEV/InStruct/Source/RWInput.for
+
+1417070900 source:/home/pi/DEV/InStruct/Source/skydia.for
+
+1417068758 source:/home/pi/DEV/InStruct/Source/solve.for
+
+1467381248 source:/home/pi/DEV/InStruct/Source/Splash.for
+
+1417068298 source:/home/pi/DEV/InStruct/Source/Spreac.for
+
+1407722700 source:/home/pi/DEV/InStruct/Source/sterm.for
+
+1417067576 source:/home/pi/DEV/InStruct/Source/stiff.for
+
+1417485334 source:/home/pi/DEV/InStruct/Source/Struct.for
+
+1417067394 source:/home/pi/DEV/InStruct/Source/utility.for
+
+1414683694 source:/home/pi/DEV/InStruct/Source/WinINIT.for
+
+1417485768 source:/home/pi/DEV/InStruct/Source/WinMenus.for
+
+1416514146 source:/home/pi/DEV/InStruct/Source/WinSCR.for
+
+1468783990 source:/home/pi/DEV/InStruct/Source/RWLoads.for
+
